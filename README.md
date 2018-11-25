@@ -1,0 +1,1 @@
+koudaitk_computer_studypoints
