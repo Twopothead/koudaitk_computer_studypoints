@@ -1,0 +1,25 @@
+<p>
+	<span style="color:#E53333;"><span style="color:#000000;">服务<strong><u>指下层为相邻上层提供的功能调用</u></strong></span><span style="color:#000000;">。</span></span>协议是水平的，而<u>服务则是垂直的</u>，即下层向上层通过接口提供服务。服务分为以下3类：
+</p>
+<strong><span style="font-size:16px;color:#E53333;">1. 面向连接</span><span style="font-size:16px;color:#E53333;">的服务和面向无连接的服务</span></strong><br />
+<p>
+	<span style="color:#E53333;"><span style="color:#000000;"><strong>面向连接的服务</strong></span><strong><span style="color:#000000;">：</span></strong></span>当通信双方通信时，<u>要</u><u>事先建立一条通信线路</u><u>，该线路包括建立连接、使用连接和释放连接3个过程</u>。TCP协议就是一种面向连接服务的协议，电话系统就是一个面向连接的模式。<br />
+<span style="color:#000000;"><strong>面向无连接的服务：</strong></span>通信双方<u>不需要事先建立一条通信线路，而是把每个带有目的地址的包（报文分组）传送到线路上，由系统选定路线进行传输</u>。IP协议和UDP协议就是两种无连接服务的协议，邮政系统就是一个无连接的模式。<br />
+面向连接与面向无连接的对比见表1-1。
+</p>
+<p>
+	&nbsp;&nbsp;<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/A29E1A87A8661A89CCCAC4686C76F18A.png" alt="" title="" height="71" width="333" align="" /> 
+</p>
+<strong><span style="color:#E53333;">2. 有应答服务与无应答服务</span></strong><br />
+<p>
+	<strong>有应答服务：</strong>指接收方在收到数据后向发送方给出相应的应答。<br />
+<strong>无应答服务：</strong>指接收方收到数据后不自动给出应答。
+</p>
+<p>
+	<strong><span style="color:#E53333;">3. 可靠服务与不可靠服务</span></strong> 
+</p>
+<span style="color:#000000;"><strong>可靠服务：</strong></span>指网络具有检错、纠错、应答机制，能保证数据正确、可靠地传送到目的地。<br />
+<span style="color:#000000;"><strong>不可靠服务：</strong></span>指网络不能保证数据正确、可靠地传送到目的地，网络只能是尽量正确、可靠，是一种“尽力而为”的服务。<br />
+<p>
+	<span style="color:#000000;"><strong><span style="color:#E53333;">注意：</span></strong>并非在一个层内完成的全部功能都称为服务，<u>只有那些能够被高一层实体“看得见”的功能才称为服务</u>。</span> 
+</p>

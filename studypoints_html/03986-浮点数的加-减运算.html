@@ -1,0 +1,24 @@
+<p>
+	对于浮点数的加/减运算，可以<strong><span style="color:#E53333;">总结为以下4个步骤：</span></strong> 
+</p>
+<p>
+	<strong>① 对阶，</strong>使两数的小数点位置对齐。
+</p>
+<p>
+	<strong>② 尾数求和，</strong>将对阶后的两尾数按定点加/减运算规则求和或者求差。
+</p>
+<p>
+	<strong>③ 规格化，</strong>为增加有效数字的位数，提高运算精度，必须将求和或求差后的尾数规格化。
+</p>
+<p>
+	<strong>④ 舍入，</strong>为提高精度，要考虑尾数右移时丢失的数值位。
+</p>
+<p>
+	当然，以上4个步骤完成后，还需要加上一步，即<strong><span style="color:#E53333;">检查一下最后的结果是否溢出，</span></strong>由于浮点数的溢出完全是用阶码来判断的，假设阶码采用补码来表示，溢出就可以使用双符号位判断溢出的方式来判断此浮点数是否溢出，过程如下：
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if（阶符= =01）<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 上溢，需做中断处理；<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else &nbsp;if（阶符= =10）<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 下溢，按机器零处理；<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结果正确；<br />

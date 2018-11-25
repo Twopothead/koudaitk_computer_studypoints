@@ -1,0 +1,27 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1. TCP连接的建立</span></strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;"><u>TCP的连接建立采用“三次握手”的方法</u></span>，</strong><span style="color:#E53333;"><u></u></span>目的是为了<strong><u>防止报文段在传输连接建立过程中出现差错</u></strong>。通过3次报文段的交互后，通信双方的进程之间就建立了一条传输连接，然后就可以用<span style="color:#E53333;"><strong><u>全双工</u></strong></span>的方式在该传输连接上正常地传输数据报文段了。
+</p>
+<p>
+	1）SYN=1，seq=x。<br />
+2）SYN=1，ACK=1，seq=y，ack=x+1。<br />
+3）ACK=1，seq=x+1，ack=y+1。
+</p>
+<p>
+	<strong><strong><span style="color:#333333;font-size:18px;">2. TCP连接的释放</span></strong><br />
+</strong> 
+</p>
+<p>
+	一旦数据传输结束，参与传输的任何一方都可以请求释放传输连接。在释放连接过程中，<strong><u>发送端进程与接收端进程要通过4次TCP报文段来释放整个传输连接</u></strong>。
+</p>
+<p>
+	1）FIN=1，seq=u。<br />
+2）ACK=1，seq=v，ack=u+1。<br />
+3）FIN=1，ACK=1，seq=w，ack=u+1。<br />
+4）ACK=1，seq=u+1，ack=w+1。
+</p>
+<p>
+	<span style="color:#E53333;"><strong>提醒：</strong></span><span style="color:#E53333;"><strong>不管是连接还是释放，SYN、ACK、FIN的值一定是1。</strong></span> 
+</p>

@@ -1,0 +1,26 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．两种形式的制约关系</span></strong> 
+</p>
+<strong>间接相互制约关系（互斥）：</strong><span style="line-height:1.5;">两进程需要互斥使用临界资源。</span><strong><br />
+</strong><strong>直接相互制约关系（同步）：</strong>两进程需要合作完成同一任务。<br />
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．临界资源与临界区</span></strong> 
+</p>
+<strong><span style="color:#E53333;">a. 临界资源：</span></strong><u><span style="color:#333333;">同时仅允许一个进程使用的资源称为临界资源</span></u>。许多物理设备都属于临界资源，如打印机、绘图机等。<br />
+<p>
+	<strong><span style="color:#E53333;">b. 临界区：</span></strong><span style="color:#E53333;"></span><span style="color:#333333;"><u>每个进程中访问临界资源的一段代码</u></span><strong>。</strong> 
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">3．互斥的概念与要求</span></strong><br />
+为了禁止两个进程同时进入临界区，软件算法或同步机构都应遵循以下准则：
+</p>
+<p>
+	<strong>a. 空闲让进：</strong>当没有进程处于临界区时，可以允许一个请求进入临界区的进程立即进入自己的临界区。<br />
+<strong>b. 忙则等待：</strong>当已有进程进入其临界区时，其他试图进入临界区的进程必须等待。<br />
+<strong>c. 有限等待：</strong>对要求访问临界资源的进程，应保证能在有限的时间内进入自己的临界 &nbsp;区。<br />
+<strong>d. 让权等待：</strong>当一个进程因为某些原因不能进入自己的临界区时，应释放处理器给其他进程。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">4．同步的概念与实现机制</span></strong><br />
+一般来说，一个进程相对另一个进程的运行速度是不确定的。也就是说，进程之间是在异步环境下运行的。但是相互合作的进程需要在某些关键点上协调它们的工作。所谓进程同步<strong>，<u>是指多个相互合作的进程在一些关键点上可能需要互相等待或互相交换信息，这种相互制约关系称为进程同步</u>。</strong> 
+</p>

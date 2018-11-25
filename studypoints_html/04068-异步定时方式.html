@@ -1,0 +1,27 @@
+<p>
+	<strong><span style="color:#E53333;">异步通信</span></strong>没有公共的时钟标准，不要求所有部件严格地统一操作时间，而是采用<strong>应答的方式（或称握手方式）</strong>，即当主模块发出请求信号时，一直等待从模块反馈“响应”信号后才开始通信。当然，这就要求主、从模块之间增加两条应答线。
+</p>
+<p>
+	异步通信的应答方式又可分为<strong><u>不互锁、半互锁和全互锁</u></strong>3种类型，如下图所示。
+</p>
+<p>
+	<img src="png-jpeg-pics/AE32CB814F07430268B0F6C028FF34B7.png" width="320" height="128" alt="" title="" align="" /> 
+</p>
+<p>
+	<span style="color:#E53333;"><strong>1. 不互锁方式</strong></span> 
+</p>
+<p>
+	特点：主模块的请求信号和从模块的回答信号没有互相的制约关系。
+</p>
+<p>
+	<strong><span style="color:#E53333;">2. 半互锁方式</span></strong> 
+</p>
+<p>
+	特点：主模块的请求信号和从模块的回答信号有简单的制约关系。
+</p>
+<p>
+	<span style="color:#E53333;"><strong>3. 全互锁方式</strong></span> 
+</p>
+<p>
+	特点：主模块的请求信号和从模块的回答信号有完全的制约关系。
+</p>

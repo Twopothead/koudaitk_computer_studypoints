@@ -1,0 +1,40 @@
+<p>
+	在避免死锁的办法中，所施加的限制条件较弱，有可能获得较好的系统性能。在该方法中把系统的状态分为安全状态和不安全状态，<strong><u>只要能使系统始终处于安全状态，便可以避免死锁的发生</u></strong>。
+</p>
+<strong><span style="color:#333333;font-size:18px;">1．安全状态与不安全状态</span></strong><br />
+<p>
+	安全状态：按某方案分配资源系统一定不会进入死锁。
+</p>
+<p>
+	不安全状态：按某方案分配资源，系统<span style="color:#333333;"><u>有可能</u></span>进入死锁。
+</p>
+<p>
+	<span style="color:#E53333;"><u><strong>安全状态一定不会导致死锁，不安全状态不一定会导致死锁，但是有可能导致死锁</strong></u></span>。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．银行家算法</span></strong> 
+</p>
+<p>
+	银行家算法中使用的数据结构如下：
+</p>
+<p>
+	a. 可利用资源向量Available；
+</p>
+<p>
+	b. 最大需求矩阵Max；
+</p>
+<p>
+	c. 分配矩阵Allocation；
+</p>
+<p>
+	d. 需求矩阵Need。
+</p>
+<p>
+	<strong>“矩阵三兄弟”具有如下关系：</strong>Need[i][j]=Max[i][j]-Allocation[i][j]；
+</p>
+<p>
+	银行家算法的流程图如下：
+</p>
+<p>
+	<img src="png-jpeg-pics/EA9C2698F88D504B5EE6D4F328CD9C0C.png" alt="" title="" height="232" width="320" align="" /> 
+</p>

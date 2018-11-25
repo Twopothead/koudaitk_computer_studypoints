@@ -1,0 +1,42 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．进程的定义</span></strong> 
+</p>
+<strong>a.</strong> 进程是程序在处理器上的<u>一次执行过程；</u><br />
+<strong>b. </strong>进程是可以和别的进程并行执行的<u>计算；</u><br />
+<strong>c. </strong>进程是程序在一个数据集合上的运行过程，<u>是系统进行资源分配和调度的一个独立单位；</u><br />
+<strong>d.</strong> 进程可定义为一个数据结构及能在其上进行操作的一个<u>程序；</u><br />
+<strong>e.</strong> 进程是一个程序关于某个数据集合在处理器上顺序执行所发生的<u>活动</u>。
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．进程的特征</span></strong> 
+</p>
+<p>
+	进程具有以下几个基本特征：<strong><span style="color:#E53333;">动态性、</span></strong><strong><span style="color:#E53333;">并发性、</span></strong><strong><span style="color:#E53333;">独立性、</span></strong><strong><span style="color:#E53333;">异步性</span>。</strong> 
+</p>
+<p>
+	<strong>进程的结构特征：</strong>为了描述和记录进程的运动变化过程，并使之能正确运行，应为每个进程配置一个进程控制块（Process Control Block，PCB）。这样从结构上看，每个进程都由<strong>程序段、数据段</strong>和一个<strong>进程控制块</strong>组成。
+</p>
+<strong><span style="color:#333333;font-size:18px;">3．进程和程序的关系</span></strong> 
+<p>
+	<strong>a.&nbsp;</strong>进程是动态的，程序是静止的；
+</p>
+<strong>b.&nbsp;</strong>进程是暂时的，程序是永久的；<br />
+<p>
+	<strong>c.&nbsp;</strong>进程与程序的组成不同：进程的组成包括程序、数据和进程控制块；
+</p>
+<strong>d.&nbsp;</strong>通过多次执行，一个程序可以产生多个不同的进程；通过调用关系，一个进程可以执行多个程序。进程可创建其他进程，而程序不能形成新的程序；<br />
+<p>
+	<strong>e.&nbsp;</strong>进程具有并行特性（独立性、异步性），程序则没有。
+</p>
+<strong><span style="color:#E53333;"><span style="font-size:18px;color:#333333;">4．进程和作业的区别</span><br />
+</span></strong> 
+<p>
+	<strong>a. </strong><span style="line-height:1.5;">作业是用户向计算机提交任务的任务实体。而进程则是完成用户任务的执行实体，是向系统申请分配资源的基本单位；</span> 
+</p>
+<strong>b. </strong>一个作业可由多个进程组成，且必须至少由一个进程组成，但一个进程不能构成多个作业。<br />
+<strong>c. </strong>作业的概念主要用在批处理系统中。像UNIX这样的分时系统则没有作业的概念；而进程的概念则用在几乎所有的多道程序系统中。<br />
+<p>
+	<strong><span style="color:#333333;font-size:18px;">5．进程的组成</span></strong> 
+</p>
+<p>
+	进程由<u>进程控制块（PCB）、</u><u>程序段、</u><u>数据段、</u><u>进程标识符（PID）、</u><u>进程当前状态、</u><u>进程队列指针、</u><u>程序和数据地址、</u><u>进程优先级、</u><u>CPU现场保护区、</u><u>通信信息、</u><u>家族联系、</u><u>占有资源清单</u>组成。
+</p>

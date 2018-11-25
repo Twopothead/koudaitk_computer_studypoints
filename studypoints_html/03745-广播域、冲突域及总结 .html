@@ -1,0 +1,26 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．物理层设备</span></strong> 
+</p>
+<p>
+	<strong>a. 中继器：</strong>当两台计算机之间的距离超过100m时，为了实现双机互连，人们在这两台计算机之间安装一个中继器，它的作用就是将已经衰减得不完整的信号经过整理，重新产生出完整的信号再继续传送。放大器和中继器都是起放大信号的作用，只不过放大器放大的是<strong><span style="color:#E53333;"><u>模拟信号</u></span></strong>，中继器放大的是<span style="color:#E53333;"><strong><u>数字信号</u></strong></span>。
+</p>
+<p>
+	<strong>b. 集线器：</strong>中继器就是普通集线器的前身，集线器实际就是一种多端口的中继器。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．数据链路层设备</span></strong> 
+</p>
+<p>
+	<strong>a. 网桥：</strong>参考下面的交换机，因为交换机就是多端口网桥。
+</p>
+<strong>b. 交换机：</strong>交换机也称为交换式集线器，它通过对信息进行重新生成，并经过内部处理后转发至指定端口，<strong><span style="color:#E53333;"><u>具备自动寻址能力和交换作用</u></span></strong>。由于交换机根据所传递数据报的目的地址，将每一数据报独立地从源端口送至目的端口，避免了和其他端口发生碰撞。简单地说就是，交换机某端口连接的主机想和另一个端口连接的主机通信，交换机就会通过转发表发送到那个端口，不可能去其他端口，不存在发错端口（即打错电话），因此交换机的每一个端口都是一个冲突域，也就是说，<span style="color:#E53333;"><strong><u>交换机可以隔离冲突域</u></strong></span>。
+<p>
+	<strong><span style="color:#333333;font-size:18px;">3．网络层设备</span></strong> 
+</p>
+<strong>路由器：</strong>路由器把数据从一个网络发送到另一个网络，具体过程见第4章网络层。前面已经讲过中继器或集线器不能隔离冲突域，交换机可以隔离冲突域，自然路由器肯定也可以隔离冲突域（因为也有一张转发表可以转发）。
+<p>
+	<strong><span style="color:#333333;font-size:18px;">4. 各层设备的冲突域、广播域总结</span></strong> 
+</p>
+<p>
+	<img src="png-jpeg-pics/6359824AB56EABA89013EFF97C57DD99.png" width="330" height="82" alt="" title="" align="" /> 
+</p>

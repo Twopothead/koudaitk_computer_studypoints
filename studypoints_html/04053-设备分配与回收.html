@@ -1,0 +1,92 @@
+<p>
+	<strong><span style="color:#E53333;font-size:24px;">1．</span></strong><strong><span style="color:#E53333;font-size:24px;">设备管理中的数据结构</span></strong> 
+</p>
+<p>
+	<strong>a. DCT（</strong><strong>设备控制表）：</strong><span style="line-height:1.5;">用于记录设备的特性以及I/O控制器的连接情况；</span> 
+</p>
+<p>
+	<strong>b. COCT（</strong><strong>控制器控制表）：</strong>用于反映设备控制器的使用状态以及和通道的连接情况等；
+</p>
+<p>
+	<strong>c. CHCT（</strong><strong>通道控制表）：</strong>用于反映通道的状态等；
+</p>
+<strong>d. SDT（</strong><strong>系统设备表）：<span><u>整个系统只有一张</u></span><strong><u>系统设备表</u></strong>，</strong>它记录了已连接到系统中的所有物理设备的情况，每个物理设备占用一个表目。
+<p>
+	<strong><span style="color:#E53333;font-size:24px;">2．设备分配策略</span></strong> 
+</p>
+<p>
+	<span style="font-size:18px;"><strong>a. 设备的使用性质</strong></span> 
+</p>
+<p>
+	在分配设备时，应考虑设备的使用性质，设备分配可以采用以下3种不同的方式。
+</p>
+<p>
+	<span style="line-height:1.5;"><span style="color:#E53333;">1）独享设备：</span>又称为独占设备，应采用独享分配方式，即<strong><u>在将一个设备分配给某进程后便一直由其独占，直至该进程完成或释放设备后，系统才能再将设备分配给其他进程</u></strong>。</span> 
+</p>
+<p>
+	<span style="color:#E53333;">2）共享分配：</span>对于<strong><u>共享设备，系统可将其同时分配给多个进程使用</u></strong>。
+</p>
+<p>
+	<span style="color:#E53333;">3）虚拟分配：</span>当<strong><u>进程申请独享设备时，系统给它分配共享设备上的一部分存储空间</u></strong>；当进程要与设备交换信息时，系统就把要交换的信息存放在这部分存储空间中；在适当的时候，将设备上的信息传输到存储空间中或将存储空间中的信息传送到设备。
+</p>
+<p>
+	<span style="font-size:18px;"><strong>b. 设备分配算法</strong></span> 
+</p>
+<p>
+	<span style="color:#E53333;">1）先来先服务：</span>根据请求的时间顺序构成队列，总是把设备优先分配给队首进程；
+</p>
+<p>
+	<span style="color:#E53333;">2）优先级高者优先：</span>按照优先级的高低进行设备分配，若优先级相同，则按照先来先服务算法进行分配。
+</p>
+<p>
+	<span style="font-size:18px;"><strong>c. 设备分配的安全性</strong></span><span style="font-size:18px;"><strong></strong></span> 
+</p>
+<p>
+	在设备分配中应保证不发生进程的死锁。<span style="line-height:1.5;">在进行设备分配时，可采用静态分配方式和动态分配方式。</span> 
+</p>
+<p>
+	<span style="color:#E53333;">1）</span><span style="color:#E53333;">静态分配：</span>在用户作业开始执行之前，由系统一次性分配该作业所需要的所有设备、设备控制器和通道，一旦分配，则一直占用，直至作业撤销。静态分配虽然不会出现死锁，但设备使用效率较低。
+</p>
+<p>
+	<span style="color:#E53333;">2）动态分配：</span>在进程执行过程中根据执行需要进行设备分配。在进程需要设备时申请，用完后立即释放。动态分配方式有利于提高设备的利用率，但如果分配算法不当，则可能造成死锁。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:24px;">3. 设备独立性</span></strong> 
+</p>
+<p>
+	<strong>a. 基本概念：<u>应用程序独立于具体使用的物理设</u></strong><strong><u>备</u></strong>，它可以提高设备分配的灵活性和设备的利用率。
+</p>
+<p>
+	<strong>b. 实现方法：</strong>引入逻辑设备和物理设备这两个概念，而系统中需要设置一张逻辑设备表，其中每个表项中都有逻辑设备名、物理设备名和设备驱动程序入口地址。<span><strong><u>在设备驱动程序之上设置一层设备独立性软件，用来执行所有I/O设备的公用操作，并向用户层软件提供统一接口</u>。</strong></span> 
+</p>
+<p>
+	<strong>c. 带来的好处：<u>设备分配时的灵活性、易于实现I/O重定向</u>。</strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:24px;">4．设备分配程序</span></strong> 
+</p>
+<p>
+	<strong><span style="font-size:18px;">a. 单通路I/O系统的设备分配</span></strong> 
+</p>
+<p>
+	当某一进程提出I/O请求后，系统的设备分配程序可以按照下述步骤进行设备分配：<strong><u>分配设备→分配设备控制器→分配通道</u></strong>。在分配时如遇到对应设备忙的情况，则将进程插入到对应的等待队列中。
+</p>
+<p>
+	<strong><span style="font-size:18px;">b. 多通路I/O系统的设备分配</span></strong> 
+</p>
+<p>
+	<strong>步骤如下</strong>：
+</p>
+<p>
+	<strong>1）</strong>根据设备类型，检索系统设备控制表，找到第一个空闲设备，并检测分配的安全性，如安全则分配，反之插入该类设备的等待队列。
+</p>
+<p>
+	<strong>2）</strong>设备分配后，检索设备控制器控制表，找到第一个与已分配设备相连的空闲设备控制器，若无空闲，则返回步骤1）查找下一个空闲设备。
+</p>
+<p>
+	<strong>3）</strong>设备控制器分配后，同样查找与其相连的通道，找到第一个空闲通道，若无则返回步骤2）查找下一个空闲设备控制器。若有空闲通道，则此次设备分配成功，将相应的设备、设备控制器和通道分配给进程，并启动I/O设备，开始信息传输。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:24px;">5．设备的回收</span></strong><br />
+当进程使用完对应的I/O设备后，释放所占有设备、设备控制器及通道，系统进行回收，修改对应的数据结构，以便下次分配时使用。
+</p>

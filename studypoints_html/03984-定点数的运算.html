@@ -1,0 +1,90 @@
+<p>
+	<strong><span style="font-size:18px;color:#E53333;">定点数的移位运算</span></strong> 
+</p>
+<p>
+	<strong>（1）逻辑移位</strong> 
+</p>
+<p>
+	逻辑移位规则：逻辑左移时，高位移丢，低位补0；逻辑右移时，低位移丢，高位添0，例如，寄存器的内容为10001010，逻辑左移为00010100，逻辑右移为01000101。
+</p>
+<p>
+	<strong>（2）算术移位</strong> 
+</p>
+<p>
+	算术移位规则总结如下表：
+</p>
+<p>
+	<img src="png-jpeg-pics/6702B9B4984FC8F172C1A131535E1BB7.png" width="245" height="170" alt="" title="" align="" /> 
+</p>
+<p class="p0">
+	<span style="font-size:18px;color:#E53333;"><strong>原码定点数的加</strong></span><span style="font-size:18px;color:#E53333;"><strong>/</strong></span><span style="font-size:18px;color:#E53333;"><strong>减运算</strong></span> 
+</p>
+<p class="p0">
+	<span style="font-size:24px;color:#E53333;"><span style="font-size:16px;color:#000000;"><strong>1）加法规则：</strong>先判断符号位，若相同，绝对值相加，结果符号位不变；若不同，则做减法，绝对值大的数减去绝对值小的数，结果符号与绝对值大的数相同。</span></span> 
+</p>
+<p class="p0">
+	<span style="color:#000000;font-size:16px;"><strong>2）减法规则：</strong>两个原码表示的数相减，首先将减数符号取反，然后将被减数与符号取反后的减数按原码加法进行运算。</span> 
+</p>
+<p class="p0">
+	<span style="color:#000000;font-size:16px;"><span style="font-size:18px;color:#E53333;"><strong>补码定点数的加/减运算</strong></span><span style="font-size:24px;color:#E53333;"><strong></strong></span><br />
+</span> 
+</p>
+<p class="p0">
+	<span style="color:#000000;font-size:16px;"><span style="font-size:24px;color:#E53333;"><strong><span style="font-size:16px;color:#000000;">（1）补码加法</span></strong></span></span> 
+</p>
+<p class="p0">
+	<span style="color:#000000;font-size:16px;">两个数的补码相加，符号位参加运算，且两数和的补码等于两数的补码之和，公式是如下：</span> 
+</p>
+<p class="p0">
+	<span style="color:#000000;font-size:16px;"><img src="png-jpeg-pics/3F34CD6B8EAA9A7F1C52ECACA7825AF7.png" width="124" height="40" alt="" title="" align="" /><br />
+</span> 
+</p>
+<p class="p0">
+	<strong>（2）补码减法</strong><strong></strong> 
+</p>
+<p class="p0">
+	<strong><img src="png-jpeg-pics/4CCA533CE368F5FECF12C90D5D4DA66C.png" width="190" height="58" alt="" title="" align="" /><br />
+</strong> 
+</p>
+<p>
+	<strong><span style="font-size:18px;color:#E53333;">溢出的概念和判别方法</span></strong> 
+</p>
+<p>
+	<strong>（1）溢出产生的原因</strong> 
+</p>
+<p>
+	<strong>溢出的概念：</strong>假设机器字长固定，不妨设为8位（包含一位符号位），根据前面掌握的知识，补码的取值范围应该是-128～127，若现在两个数相加大于127，或者小于-128，则称为溢出，其中两数相加大于上界127，称为上溢或者正溢出；两数相加小于下界-128，称为下溢或者负溢出。定点小数的情况相同，若两个定点小数相加大于或等于1，则称为上溢；若两个定点小数相加小于-1，则称为下溢。
+</p>
+<p>
+	<strong>（2）</strong><strong>计算机是怎么判断溢出的呢？一共有以下3种方法。</strong> 
+</p>
+<p>
+	<strong>1）方法一：从两个数的符号位出发。</strong> 
+</p>
+<p>
+	讲解之前先介绍两个必须知道的概念：
+</p>
+<p>
+	<strong>① 对于加法，</strong>只有在正数加正数或负数加负数两种情况下才有可能出现溢出，符号不同的两个数相加是不会溢出的。
+</p>
+<p>
+	<strong>② 对于减法，</strong>只有在正数减负数或负数减正数两种情况下才有可能出现溢出，符号相同的两个数相减是不会溢出的。
+</p>
+<p>
+	由于减法运算在机器中是用加法器实现的，因此可得出如下结论：不论是做加法，还是做减法，只要实际参加操作的两个数（减法时即为被减数和“求补”以后的减数）符号相同，结果又与原操作数的符号不同，即认为溢出。
+</p>
+<p>
+	<strong>2）方法二：仍然是从两个数的符号位出发。</strong> 
+</p>
+<p>
+	在计算机中，一般都是通过数值部分最高位的进位（或者称为最高有效位）和符号位产生的进位进行“异或”操作，然后按照“异或”的结果进行判断（“异或”就是两数不同时为1，两数相同时为0）。若“异或”结果为1，则为溢出；若“异或”结果为0，则无溢出。
+</p>
+<p>
+	<strong>3）方法三：用两位符号位判断溢出。</strong> 
+</p>
+<p>
+	<strong>变形补码判断溢出的原则：</strong>当两位符号位不同时，表示溢出，否则，无溢出。无论是否发生溢出，高位符号位永远代表真正的符号位。再深入分析一下：假设现在运算结果的符号位为01，而高位符号代表的是真正的符号位，可以判断这个结果一定是一个正数，既然是正数则肯定是正溢出；反之，运算结果的符号位是10，则是负溢出。
+</p>
+<p>
+	<span style="color:#E53333;">定点数的乘除法内容较多，不适合手机观看，详见《计算机组成原理高分笔记》。</span> 
+</p>

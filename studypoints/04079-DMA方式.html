@@ -1,0 +1,54 @@
+<p>
+	<span style="color:#E53333;"><strong>1．DMA方式的特点</strong></span> 
+</p>
+<p>
+	DMA方式是一种完全由硬件进行成组信息传送的控制方式，具有程序中断方式的优点，即在数据准备阶段，CPU与外设并行。它还降低了CPU在传送数据时的开销，这是因为<strong>信息传送不再经过CPU，而在外设与内存之间直接进行，</strong>因此称为直接存储器存取方式。由于数据传送不经过CPU，也就不需要保护、恢复CPU现场等烦琐操作。这种方式适用于磁盘、磁带等高速设备大批量数据的传送。
+</p>
+<p>
+	<span style="color:#E53333;"><strong>2．DMA的传送方法</strong></span> 
+</p>
+<p>
+	如果出现高速I/O（通过DMA接口）和CPU同时访问主存怎么办？这个时候CPU就得将总线（如地址线、数据线等）的占有权让给DMA接口使用，即DMA采用<strong>周期窃取</strong>的方式占用一个存储周期。通常，DMA与主存交换数据时采用以下3种方法。
+</p>
+<p>
+	<strong>（1）停止CPU访问主存</strong> 
+</p>
+<p>
+	当外设需要传送一片数据时，由DMA接口向CPU发一个信号，要求CPU放弃地址线、数据线和有关控制线的使用权，DMA接口获得总线控制权后，开始进行数据传送。在数据传送结束后，DMA接口通知CPU可以使用主存，并把总线控制权交还给CPU。在这种传送过程中，<strong>CPU基本处于不工作状态或保持原始状态</strong>。
+</p>
+<p>
+	<strong>（2）周期挪用</strong> 
+</p>
+<p>
+	当I/O设备没有DMA请求时，CPU按程序的要求访问主存，一旦I/O设备有DMA请求，就会遇到3种情况：第一种情况是<span style="color:#E53333;">CPU不在访存</span>（CPU正在执行加法指令），故I/O的访存请求与CPU未发生冲突；第二种情况是<span style="color:#E53333;">CPU正在访存，</span>必须等待存储周期结束后，CPU再将总线占有权让出；第三种情况是<span style="color:#E53333;">I/O和CPU同时请求访存</span>，出现了访存冲突，此刻CPU要暂时放弃总线占有权，由I/O设备挪用一个或几个存储周期。
+</p>
+<p>
+	<strong>（3）DMA与CPU交替访问</strong> 
+</p>
+<p>
+	这种方式适用于CPU的工作周期比主存存取周期长的情况，例如，CPU的工作周期是1.2s，主存的存取周期小于0.6s，那么可将一个CPU周期分为C1和C2两个周期，其中C1专供DMA访存，C2专供CPU访存。
+</p>
+<p>
+	<span style="color:#E53333;"><strong>3．DMA接口的功能</strong></span> 
+</p>
+<p>
+	利用DMA方式传送数据时，数据的传输过程完全由DMA接口电路控制，故DMA接口又称为DMA控制器。<span style="color:#E53333;">DMA接口应具有以下几个功能：</span> 
+</p>
+<p>
+	<strong>1）</strong>向CPU申请DMA数据传送。
+</p>
+<p>
+	<strong>2）</strong>在CPU允许DMA工作时，处理总线控制权的转交，避免因进入DMA工作而影响CPU正常活动或引起总线竞争。
+</p>
+<p>
+	<strong>3）</strong>在DMA期间管理系统总线，控制数据传送。
+</p>
+<p>
+	<strong>4）</strong>确定数据传送的起始地址和数据长度，并修正数据传送过程中的数据地址和数据长度。
+</p>
+<p>
+	<strong>5）</strong>在数据块传送结束时，给出DMA操作完成的信号。
+</p>
+<p>
+	DMA的传送过程分为<strong><u>预处理、数据传送和后处理</u></strong>3个阶段。
+</p>

@@ -1,0 +1,51 @@
+<p>
+	在现代计算机中，为了便于软件移植，一般均采用<u><strong>IEEE 754标准</strong></u>来表示浮点数。在介绍IEEE 754标准前，有必要先介绍一下浮点数的表示形式。
+</p>
+<p>
+	既然尾数和阶码分别是定点小数和定点整数，即尾数和阶码都是有符号位的，那么就可以写出<strong>浮点数N的一般格式</strong>，如图2-1所示。
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/6FE5A2B6C1359E9800E06FB67C945377.png" width="260" height="86" alt="" title="" align="" /> 
+</p>
+<p>
+	从上图中可知：
+</p>
+<p>
+	<span style="color:#333333;">1）</span><span style="color:#333333;">浮点数阶码的底r省略（一般容易出选择题）。</span> 
+</p>
+<p>
+	<span style="color:#333333;">2）</span><span style="color:#333333;">阶符和阶码的位数k合起来反映浮点数的表示范围及小数点的实际位置。</span> 
+</p>
+<p>
+	<span style="color:#333333;">3）</span><span style="color:#333333;">尾数M的位数n反映了浮点数的精度。</span> 
+</p>
+<p>
+	<span style="color:#333333;">4）</span>尾数的符号为<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=88c831&m_s" alt="" width="21" height="9" />，它也是整个浮点数的符号位，表示了该浮点数的正负。
+</p>
+<p>
+	在大多数机器中，尾数为纯小数，<strong><u>常用原码或补码表示</u></strong>；阶码为定点整数，<strong><u>常用补码或移码表示。</u></strong> 
+</p>
+<p>
+	下面就开始介绍IEEE 754标准。
+</p>
+<p>
+	<span style="font-size:24px;"><strong>IEEE754标准</strong></span> 
+</p>
+<p>
+	采用<span style="color:#E53333;"><strong>IEEE 754标准</strong></span>来表示浮点数，格式如图2-2所示。
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/752F41641C8EDCD76B34C5208BE4D47F.png" width="269" height="61" alt="" title="" align="" /> 
+</p>
+<p>
+	如数符为s，阶码为e，尾数为M
+</p>
+<p>
+	则真值<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=ccaf64&x={(-1)^s}\times1.M\times{2^{e-127}}" alt="" width="189" height="19" />(32位浮点数)
+</p>
+<p>
+	按照IEEE 754标准，常用的浮点数有以下3种，见下表：
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/3D7EB7881E3EFD61FA1063F3DC8A777B.png" width="355" height="64" alt="" title="" align="" /> 
+</p>

@@ -1,0 +1,27 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1. ARP</span></strong> 
+</p>
+<p>
+	<strong><span style="color:#333333;"><u>ARP是解决同一个局域网上的主机或路由器的IP地址和硬件地址的映射问题的。</u></span></strong>如果所要找的主机和源主机不在同一个局域网上，那么就要通过ARP找到一个位于本局域网上的某个路由器的硬件地址，然后把分组发送给这个路由器，让这个路由器把分组转发给下一个网络，剩下的工作就由下一个网络来做。
+</p>
+<p>
+	<span style="color:#E53333;"><strong>注意：</strong></span><strong><u><span style="color:#333333;">ARP请求分组是广播</span></u></strong><strong><u><span style="color:#333333;">发送的</span></u></strong>，但是<strong><u>ARP响应分组是普通的单播</u></strong>，即从一个源地址发送到一个目的地址。
+</p>
+<p>
+	<span style="color:#333333;font-size:18px;"><strong>2. ARP的四种应用场景</strong></span> 
+</p>
+<p>
+	<strong>a.</strong> 发送方是主机，要把IP数据报发送到本网络上的另一个主机。这时<u>用ARP找到目的主机的硬件地址</u>。
+</p>
+<p>
+	<strong>b. </strong>发送方是主机，要把IP数据报发送到另一个网络上的一个主机。这时<u>用ARP找到本网络上的一个路由器的硬件地址</u>，剩下的工作由这个路由器来完成。
+</p>
+<p>
+	<strong>c. </strong>发送方是路由器，要把IP数据报转发到本网络上的一个主机。这时<u>用ARP找到目的主机的硬件地址</u>。
+</p>
+<p>
+	<strong>d. </strong>发送方是路由器，要把IP数据报转发到另一个网络上的一个主机。这时<u>用ARP找到本网络上的一个路由器的硬件地址</u>，剩下的工作由这个路由器来完成。
+</p>
+<p>
+	既然ARP可以将IP地址转换成物理地址，那么有没有一种设备可以将物理地址转换成IP地址呢？RARP可以转换，但是基本已经被淘汰了，因为物理地址转换成IP地址这种功能已经被集成到了DHCP。
+</p>

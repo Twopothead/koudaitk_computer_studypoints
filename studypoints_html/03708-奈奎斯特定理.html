@@ -1,0 +1,16 @@
+<p>
+	<strong><span style="color:#E53333;">1．采样定理</span></strong> 
+</p>
+<p>
+	讲解带宽的时候提到，在通信领域带宽是指信号最高频率与最低频率之差，单位为Hz。因此将模拟信号转换成数字信号时，假设原始信号中的最大频率为f，<span style="color:#000000;"><strong><u>那么采样频率f采样必须大于或等于最大频率f的两倍</u></strong></span>，才能保证采样后的数字信号完整保留原始模拟信号的信息（只需记住结论，不要试图证明，切记！）。另外，采样定理又称为奈奎斯特定理。
+</p>
+<p>
+	<strong><span style="color:#E53333;">2．奈奎斯特定理</span></strong> 
+</p>
+具体的信道所能通过的频率范围总是有限的（因为具体的信道带宽是确定的），所以信号中的大部分高频分量就过不去了，这样在传输的过程中会衰减，导致在接收端收到的信号的波形就失去了码元之间的清晰界限，<strong><u>这种现象叫做码间串扰</u></strong>。所以是不是应该去寻找在保证不出现码间串扰的条件下的码元传输速率的最大值呢？没错，这就是奈奎斯特定理的由来。奈奎斯特在采样定理和无噪声的基础上，提出了奈奎斯特定理。奈奎斯特定理的公式为<br />
+<p class="MsoNormal" style="text-align:center;text-indent:0cm;" align="center">
+	<span>C<sub>max</sub>=f</span><sub>采样</sub><span>×log<sub>2</sub>N=2f×log<sub>2</sub>N</span>（<span>bit/s</span>）<span style="line-height:1.5;"></span> 
+</p>
+<p>
+	式中，f表示理想低通信道的带宽；N表示每个码元的离散电平的数目。
+</p>

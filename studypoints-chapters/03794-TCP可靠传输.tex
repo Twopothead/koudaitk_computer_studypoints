@@ -1,0 +1,36 @@
+\textbf{{1．TCP的数据编号与确认}}
+
+\textbf{a.
+TCP协议是面向字节的。}TCP将所要传送的报文看成是\textbf{字节组成的数据流}，并使每一个字节对应于一个序号。在连接建立时，双方要商定初始序号。
+
+\textbf{b.
+TCP的确认是对接收到的数据的最高序号表示确认。}因此，确认号表示接收端期望下次收到的数据中的第一个数据字节的序号。
+
+% file://C:/Users/ADMINI~1/AppData/Local/Temp/SGTpbq/4656/02FB0730.png}
+
+\textbf{c.~在后退N帧协议中，}
+如果帧不按序到达，直接丢弃后面的，没有使用选择确认。
+
+\textbf{d.
+在选择重传协议中，}先把后面有序的帧存在接收缓冲区中，等到前面失序的帧到达后，一起按序交付，这里就用到选择确认SACK。
+
+\textbf{{2．TCP的重传机制}}
+
+TCP每发送一个报文段，就对这个报文段设置一次计时器。\textbf{{只要计时器设置的重传时间到了规定时间还没有收到确认，那么就要重传该报文段}}。TCP采用了一种自适应的算法，如下：
+
+{\textbf{第一步：}记录每个报文段发出的时间以及收到相应的确认报文段的时间。这两个时间之差就是报文段的往返时延。}
+
+{\textbf{第二步：}将各个报文段的往返时延样本加权平均，就得出报文段的平均往返时延（}{RTT}{）。}
+
+{\textbf{第三步：}}{每测量到一个新的往返时延样本，就按下式重新计算一次平均往返时延。}
+
+{}
+
+{RTT}={(1}-a{)\includegraphics[width=0.09375in,height=0.08333in]{texmath/ff0c81times}}{(}旧的{RTT)}+a\includegraphics[width=0.09375in,height=0.08333in]{texmath/ff0c81times}{(}新的往返时延样本{)}
+
+{ }
+
+{在上式中，0≤a\textless{}1。若a很接近于1，表示新算出的平均往返时延RTT和原来的值相比变化较大，即RTT的值
+更新较快。若选择a接近于0，则表示加权计算的RTT受新的往返时延样本的影响不大，即RTT的值更新较慢，一般推荐a取0.125。}
+
+{计时器的超时重传时间（RTO）应略大于上面得出的RTT，即}{RTO=\includegraphics[width=0.10417in,height=0.14583in]{texmath/338478beta}\includegraphics[width=0.09375in,height=0.08333in]{texmath/ff0c81times}RTT（其中\includegraphics[width=0.10417in,height=0.14583in]{texmath/338478beta}\textgreater{}1）}

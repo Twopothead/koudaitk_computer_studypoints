@@ -1,0 +1,39 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1. RIP和OSPF的比较</span></strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;">a. 协议参数</span></strong> 
+</p>
+<p>
+	RIP中用于表示目的网络远近的参数为<strong><u>跳</u></strong><strong><u>数</u></strong>，且参数被限制为最大15。而OSPF协议，路由表中表示目的网络的参数为费用（如时延），该参数为一虚拟值，即OSPF路由信息不受物理跳数的限制。因此，<strong><u>OSPF协议适合应用于大型网络</u></strong>。
+</p>
+<p>
+	<strong><span style="color:#E53333;">b. 收敛速度</span></strong> 
+</p>
+<p>
+	RIP周期性地将整个路由表作为路由信息广播至网络中，该广播周期为30s。在一个较大型的网络中，RIP会产生很大的广播信息，占用较多的网络带宽资源，并且由于RIP 30s的广播周期，影响了RIP的收敛，甚至出现不收敛的现象。而OSPF是一种链路状态的路由协议，当网络比较稳定时，网络中的路由信息比较少，并且其广播也不是周期性的，因此<strong><u>OSPF路由协议在大型网络中也能够较快地收敛</u></strong>。
+</p>
+<p>
+	<strong><span style="color:#E53333;"><img src="file://C:\Users\ADMINI~1\AppData\Local\Temp\SGTpbq\4656\029033D9.png" />c.&nbsp;分层</span></strong> 
+</p>
+<p>
+	在RIP中，网络是一个平面的概念，并无区域及边界等的定义。在OSPF路由协议中，一个网络或者一个自治系统可以<strong><u>划分为很多个区域</u></strong>，每一个区域通过OSPF边界路由器相连。
+</p>
+<p>
+	<strong><span style="color:#E53333;">d. 负载平衡</span></strong> 
+</p>
+<p>
+	在OSPF路由选择协议中，如果到同一个目的网络有多条相同代价的路径，那么可以将通信量分配给这几条路径。这称为多路径间的<strong>负载平衡</strong>。而RIP不会，它只能按照一条路径传送数据。
+</p>
+<p>
+	<strong><span style="color:#E53333;">e. 灵活性</span></strong> 
+</p>
+<p>
+	<strong><u>OSPF协议对于不同类型的业务可以计算出不同的路由，十分灵活</u></strong>。而这种灵活性是RIP所没有的。
+</p>
+<p>
+	<strong><span style="color:#E53333;">f. 以组播地址发送报文</span></strong> 
+</p>
+<p>
+	RIP使用<span style="color:#E53333;"><strong><u>广播</u></strong></span>报文来发送给网络上的所有设备，而OSPF协议采用<span style="color:#E53333;"><strong><u>组播</u></strong></span>地址来发送，只有运行OSPF协议的设备才会接收发送来的报文，其他设备不参与接收。
+</p>

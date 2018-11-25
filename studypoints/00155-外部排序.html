@@ -1,0 +1,30 @@
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>1. 外部排序的基本概念</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">内排序就是可以在内存中完成的排序（如快速排序、堆排序、归并排序等）。区别于内排序，外部排序指的是大文件的排序，即待排序的记录存储在外存储器上，待排序的文件无法一次装入内存。<span style="color:#E53333;">外部排序最常用的算法是多路归并排序</span>，分为两步：</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">① 将文件中的数据分段输入内存，用内排的方法进行排序，然后写回到外存；</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">② 对这些有序段，采用归并方法，在外存上形成整个文件的单一归并段。</span><span style="line-height:1.5;"></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>2. 最佳归并树</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/7C0D015232CDC8CB5F63EF614F3C2D0A.png" width="356" height="131" alt="" title="" align="" /> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>3. 胜者树</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/144878B1DFDF623E5FD212A310E768B5.png" width="356" height="117" alt="" title="" align="" /> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>4. 败者树</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/0D1188BB7CAF6C367D56C201AB36812E.png" width="356" height="168" alt="" title="" align="" /></span> 
+</p>

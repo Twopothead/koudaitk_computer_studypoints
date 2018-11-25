@@ -1,0 +1,25 @@
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">n个结点的二叉链表中含有n+1个空指针域。利用二叉链表中的空指针域，存放指向结点在某种遍历次序下的前趋和后继结点的指针（这种附加的指针称为“线索”）。<span style="color:#E53333;"><u>这种加上了线索的二叉链表称为线索链表，相应的二叉树称为线索二叉树。</u></span>线索二叉树的结点结构定义如下：<br />
+</span> 
+</p>
+<p style="font-size:16px;">
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/2C7D92B8C8B6DFA32271B9299B2CFE31.png" width="356" height="30" alt="" title="" align="" /> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">其中：</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">&nbsp; &nbsp; &nbsp; ltag=0时lchild指向左子女；</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">&nbsp; &nbsp; &nbsp; ltag=1时lchild指向前驱；</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">&nbsp; &nbsp; &nbsp; rtag=0时rchild指向右子女；</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">&nbsp; &nbsp; &nbsp; rtag=1时rchild指向后继。</span> 
+</p>
+<div>
+	<br />
+</div>

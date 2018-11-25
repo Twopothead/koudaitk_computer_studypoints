@@ -1,0 +1,28 @@
+<strong><span style="color:#333333;font-size:18px;">1．信号量及同步原语</span></strong><br />
+<p>
+	<img src="png-jpeg-pics/31A68F58564D5473718C17263BC2F1D7.png" alt="" title="" height="329" width="330" align="" /> 
+</p>
+<p>
+	<strong><span style="color:#E53333;">P、V操作均为不可分割的原子操作</span></strong>，这保证了对信号量进行操作过程中不会被打断或阻塞。P操作相当于申请资源，V操作相当于释放资源。P操作和V操作在系统中一定是成对出现，但未必在一个进程中，可以分布在不同进程中。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．信号量的分类</span></strong> 
+</p>
+<p>
+	<strong>a. 整型信号量：</strong><span style="line-height:1.5;">整型信号量是一个整型量s，除初始化外，仅能通过标准的原子操作P和V来访问。整型信号量引入了P、V操作，但是在进行P操作时，如果无可用资源，则进程持续对该信号量进行测试，存在“忙等”现象，未遵循“让权等待”准则。</span> 
+</p>
+<p>
+	<strong>b. 记录型信号量（资源信号量）</strong> 
+</p>
+为了解决整型信号量存在的“忙等”问题，<span style="color:#333333;"><strong><u>添加了链表结构</u></strong></span>，用于链接所有等待该资源的进程，记录型信号量正是由于采用了记录型的数据结构而得名。<br />
+<p>
+	当进程对信号量进行P操作时，<strong><u>若此时无剩余资源可用，则进程自我阻塞，放弃处理器，并插入到等待链表中</u></strong>。可见，该机制遵循“让权等待”准则。当进程对信号量进行V操作时，若链表中仍有等待该资源的进程，则唤醒链表中的第一个等待进程。
+</p>
+<strong><span style="color:#333333;font-size:18px;">3．信号量的应用</span></strong><span style="line-height:1.5;font-size:18px;color:#333333;">&nbsp;</span><strong><span style="color:#E53333;"><br />
+</span></strong><strong>a. 实现进程同步：</strong>假设存在并发进程P1和P2。P1中有一条语句S1，P2中有一条语句S2，要求S1必须在S2之前执行。这种同步问题使用信号量就很好解决。<br />
+<img src="png-jpeg-pics/385B9D2BDF1FE32401CBDE9F621AB128.png" alt="" title="" height="172" width="320" align="" /><br />
+<strong>b. 实现进程互斥：</strong>假设有进程P1和P2，两者有各自的临界区，但系统要求同时只能有一个进程进入自己的临界区，这里使用信号量可以很方便地解决临界区的互斥进入。设置信号量N，初值为1（即可用资源数为1），只需要将临界区放在P(N)和V(N)之间即可实现两进程的互斥进入。<br />
+<img src="png-jpeg-pics/2DAFB1FCA7C1D490F4A0BD65E410DE83.png" alt="" title="" height="236" width="180" align="" /><br />
+<p>
+	当有两个或者多个进程需要互斥访问某资源时，可以设置一个初值为1的信号量，在这些进程的访问资源的代码前后分别对该信号量进行P操作和V操作，即可保证进程对该资源的互斥访问。
+</p>

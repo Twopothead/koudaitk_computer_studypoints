@@ -1,0 +1,28 @@
+<strong><span style="color:#333333;font-size:18px;">1．磁盘的物理结构</span></strong><br />
+<p>
+	磁盘上的一系列同心圆称为磁道，磁道沿径向又分成大小相等的多个扇区，盘片上与盘片中心有一定距离的所有磁道组成了一个柱面。因此，<strong><u>磁盘上的每个物理块可以用柱面号、磁头号和扇区号表示</u></strong>。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．磁盘结构中的信息</span></strong> 
+</p>
+<p>
+	a. 引导控制块：通常为分区的第一块，如果该分区没有操作系统，则为空；<br />
+b. 分区控制块：包括分区的详细信息，如分区的块数、块的大小、空闲块的数目和指针等；<br />
+c. 目录结构：采用目录文件组织；<br />
+d. 文件控制块：包括文件的信息，如文件名、拥有者、文件大小和数据块位置等。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">3．磁盘的访问时间Ta</span></strong> 
+</p>
+<p>
+	磁盘的访问时间Ta表示为：<strong>访问时间=寻道时间+旋转延迟+传输时间。</strong> 
+</p>
+<p>
+	<strong>a. 寻道时间Ts：</strong>磁盘接收到读指令后，磁头从当前位置移动到目标磁道位置，所需时间为寻道时间Ts。该时间是启动磁臂的时间s与磁头移动n条磁道所花费时间的总和，m为每移动一个磁道所需时间，即<strong><span style="color:#E53333;">Ts=m×n+s</span>；</strong> 
+</p>
+<p>
+	<strong>b. 旋转延迟Tr：</strong>旋转磁盘、定位数据所在的扇区所需的时间为旋转延迟Tr。设磁盘的旋转速度为r，则<strong><span style="color:#E53333;">Tr=(1/r)/2=1/(2r)</span>；</strong> 
+</p>
+<p>
+	<strong>c. 传输时间Tt：</strong>从磁盘上读取数据的时间为传输时间Tt。传输时间取决于每次读写的字节数b和磁盘的旋转速度，即<strong><span style="color:#E53333;">Tt=b/(rN)</span>，</strong>式中，r为转速；N为一个磁道上的字节数。
+</p>

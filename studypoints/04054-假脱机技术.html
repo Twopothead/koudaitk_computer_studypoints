@@ -1,0 +1,42 @@
+<p>
+	<strong><span style="font-size:24px;color:#E53333;">1. 假脱机技术</span></strong> 
+</p>
+<p>
+	系统中独占设备的数量有限，往往不能满足系统中多个进程的需要，从而成为系统的“瓶颈”，使许多进程因等待而阻塞。另一方面，分配到独占设备的进程，在整个运行期间往往占有但不经常使用设备，使设备利用率偏低。为克服这种缺点，<strong><u>人们通过共享设备来虚拟独占设备，将独占设备改造成共享设备，从而提高了设备利用率和系统的效率</u></strong>，该技术称为假脱机（SPOOLing）技术。
+</p>
+<p>
+	<strong><span style="font-size:24px;color:#E53333;">2.&nbsp;</span><strong><span style="font-size:24px;color:#E53333;">SPOOLing技术</span></strong><span style="font-size:24px;color:#E53333;"></span></strong> 
+</p>
+<p>
+	<span style="font-size:18px;"><strong>a. 基本概念</strong></span> 
+</p>
+<p>
+	是<strong><span style="color:#E53333;"><u>低速输入输出设备与主机交换的一种技术</u></span></strong>，其核心思想是<strong><span style="color:#E53333;"><u>以联机的方式得到脱机的效果</u></span></strong>。低速设备经通道和设在主机内存的缓冲存储器与高速设备相连，该高速设备通常是辅存。为了存放从低速设备上输入的信息，在内存中形成缓冲区，在高速设备上形成输出井和输入井，传递时信息从低速设备传入缓冲区，再传到高速设备的输入井，再从高速设备的输出井传到缓冲区，再传到低速设备。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">b．SPOOLing系统的组成</span></strong> 
+</p>
+<p>
+	1）输入井和输出井：输入井和输出井是在磁盘上开辟出来的两个存储区域。<strong><u>输入井模拟脱机输入时的磁盘，用于收容I/O设备输入的数据。输出井模拟脱机输出时的磁盘，用于收容用户程序的输出数据</u>。</strong> 
+</p>
+<p>
+	2）输入缓冲区和输出缓冲区：输入缓冲区和输出缓冲区是在内存中开辟的两个缓冲区。<strong><u>输入缓冲区用于暂存由输入设备传递过来的数据，然后再传送到输入井。输出缓冲区用于暂存从输出井传递过来的数据，然后再传送到输出设备</u></strong>。
+</p>
+<p>
+	3）输入进程和输出进程：<strong><u>输入进程</u></strong><strong><u>模拟脱机输入时的外围控制机</u></strong>，将用户要求的数据从输入设备通过输入缓冲区再传递到输出井。当需要输入数据时，CPU直接将数据从输入井读入内存。<span style="line-height:1.5;"><strong><u>输出进程</u></strong></span><span style="line-height:1.5;"><strong><u>模拟</u></strong></span><span style="line-height:1.5;"><strong><u>脱机输出时的外围控制机</u></strong>，把用户要求输出的数据先从内存送到输出井，等输出设备空闲时，再将输出井中的数据经过输出缓冲区送到输出设备上。</span> 
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">c．SPOOLing技术的特点</span></strong> 
+</p>
+<p>
+	<span style="color:#333333;">1）提高了I/O速度；</span> 
+</p>
+<p>
+	<span style="color:#333333;">2）设备并没有分配给任何进程；</span> 
+</p>
+<p>
+	<span style="color:#333333;">3）实现了虚拟设备功能；</span> 
+</p>
+<p>
+	<span style="color:#333333;">4）SPOOLing除了是一种速度匹配技术外，也是一种虚拟设备技术。</span> 
+</p>

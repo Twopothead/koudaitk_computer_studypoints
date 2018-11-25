@@ -1,0 +1,43 @@
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">1．UDP的基本概念</span></strong> 
+</p>
+<p>
+	UDP和TCP最大的区别在于它是无连接的，UDP其实只在IP的数据报服务之上增加了端口的功能（为了找到进程）和差错检测的功能。
+</p>
+<p>
+	虽然UDP用户数据报只能提供不可靠的交付，<strong>但</strong><strong>UDP在某些方面有其特殊的优点。</strong> 
+</p>
+<p>
+	<strong>1）</strong><u>发送数据之前不需要建立连接</u><strong>。</strong> 
+</p>
+<p>
+	<strong>2）</strong>UDP的主机<u>不需要维持复杂的连接状态表</u>。
+</p>
+<strong>3）</strong>UDP用户数据报<u>只有</u><u>8个字节的首部</u>开销。<br />
+<p>
+	<strong>4）</strong>网络出现的拥塞不会使源主机的发送速率降低。
+</p>
+<p>
+	<strong>5）</strong>UDP<u>支持一对一、一对多、多对一和多对多</u>的交互通信。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">2．UDP数据报的组成</span></strong> 
+</p>
+<p>
+	UDP数据报有两个字段：数据字段和首部字段。首部字段有8B，由4个字段组成，如下图所示。
+</p>
+<p>
+	<img src="png-jpeg-pics/8BF4290E57D76DF799073EA77AC636FA.png" width="300" height="87" alt="" title="" align="" /> 
+</p>
+<p>
+	<strong>1）源端口。</strong>占2B。前面已经说了使用16bit来表示端口号，所以需要2B长度。
+</p>
+<p>
+	<strong>2）目的端口。</strong>占2B。
+</p>
+<p>
+	<strong>3）长度。</strong>占2B。
+</p>
+<p>
+	<strong>4）校验和。</strong>占2B。用来检测UDP用户数据报在传输中是否有错（既检验首部，又检验数据部分），如果有错，就直接丢弃；若该字段为可选字段，当源主机不想计算校验和时，则直接令该字段为全0。<strong><u>检验范围：伪首部、UDP数据报的首部和数据。其中，在计算校验和时临时生成伪首部</u></strong>。
+</p>

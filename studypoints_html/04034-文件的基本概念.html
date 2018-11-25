@@ -1,0 +1,36 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．文件的概念</span></strong> 
+</p>
+<p>
+	<span style="line-height:1.5;">在计算机中，</span><strong><u>大量的数据和信息是通过文件存储和管理的</u></strong><span style="line-height:1.5;">。文件系统负责管理文件，并为用户提供对文件进行</span><strong><u>存取、共享及保护</u></strong><span style="line-height:1.5;">的方法。</span> 
+</p>
+<p>
+	文件：<strong><u>有文件名的一组相关元素的集合</u></strong>，在文件系统中是一个最大的数据单位，它描述了一个对象集，每个文件都有一个文件名，用户通过文件名来访问文件。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．文件的属性</span></strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#333333;">a. 名称：文件名唯一，以容易读取的形式保存；</span><br />
+<span style="color:#333333;">b. 标识符：系统内文件的唯一标签，通常为数字，对用户来说是透明的；</span><br />
+<span style="color:#333333;">c. 文件类型：被支持不同类型的文件系统所使用；</span><br />
+<span style="color:#333333;">d. 文件位置：指向文件的指针；</span><br />
+<span style="color:#333333;">e. 文件的大小、建立时间、用户标识等。</span></span> 
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">3．文件的分类</span></strong> 
+</p>
+<p>
+	a. 按照用途分类：系统文件、库文件、用户文件；<br />
+b. 按保护级别分类：只读文件、读写文件、执行文件、不保护文件；<br />
+c. 按信息流向分类：输入文件、输出文件、输入输出文件。<br />
+d. 按数据形式分类：源文件、目标文件、可执行文件。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">4．文件的操作</span></strong> 
+</p>
+<p>
+	a. 基本的文件操作：创建文件、删除文件、读文件、写文件、截断文件、设置文件的读/写位置等。
+</p>
+b. 文件的打开操作：<span style="line-height:1.5;"><strong><u>是指系统将文件的属性从外存复制到内存，并设定一个编号（或索引）返回给用户</u></strong>。以后当用户要对该文件进行操作时，只需利用编号（或索引号）向系统提出请求即可。这样避免了系统对文件的再次检索，节约了检索开销，也提高了对文件的操作速度。</span><br />
+c. 文件的关闭操作：<strong><u>是指系统将打开的文件的编号（或索引号）删除，<span style="color:#E53333;">并销毁其文件控制块</span></u></strong>。如果文件被修改，则需要将修改保存到外存。

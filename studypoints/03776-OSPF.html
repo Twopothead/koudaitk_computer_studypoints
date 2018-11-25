@@ -1,0 +1,48 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．链路状态协议</span></strong> 
+</p>
+<p>
+	如果要算路由器1到路由器2、3、4的最短路径（给出邻接矩阵，即链路状态数据库），就可以将路由器1看成是起始结点，然后使用3次Dijkstra算法分别计算出路由器1到路由器2、3、4的最短路径，路由表就出来了。一旦网络拓扑又有变化，如以前没有相连的路由器，现在相连了，就又按照这样的步骤去计算路由表，这就是链路状态协议。
+</p>
+<p>
+	<strong><span style="font-size:18px;">2. OSPF协议介绍</span></strong> 
+</p>
+<p>
+	<span style="line-height:1.5;">为了使OSPF路由协议能够用于规模很大的网络，并且使其收敛得更快，OSPF路由协议将一个自治系统再划分为若干个更小的范围，称为<strong><u>区域</u></strong>，如下图所示。</span> 
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/2E13E707A209CCB2E953519FE7AECD56.png" width="300" height="145" alt="" title="" align="" /> 
+</p>
+<p>
+	<strong><strong><span style="font-size:18px;">3. OSPF协议三要点</span></strong></strong> 
+</p>
+<p>
+	1）向本自治系统中所有路由器发送信息，这里使用的方法是<span style="color:#333333;"><strong><u>洪泛法</u></strong></span>。
+</p>
+<p>
+	2）发送的信息就是<strong><u>与本路由器相邻的所有路由器的链路状态</u></strong>，但这只是路由器所知道的部分信息。
+</p>
+<p>
+	3）“链路状态”就是说明本路由器都和哪些路由器相邻以及该链路的“度量”（metric）。
+</p>
+<p>
+	<span style="color:#E53333;"><strong>注意：</strong><span style="color:#333333;"><strong><u>只有当链路状态发生变化时</u></strong>，路由器才用洪泛法向所有路由器发送此信息。</span></span> 
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">4．OSPF的5种分组类型</span></strong> 
+</p>
+<p>
+	<strong>1）</strong>类型1。问候（Hello）分组，用来发现和维持邻站的可达性；
+</p>
+<p>
+	<strong>2）</strong>类型2。数据库描述分组，向邻站给出自己的链路状态数据库中的所有链路状态项目的摘要信息；
+</p>
+<p>
+	<strong>3）</strong>类型3。链路状态请求分组，向对方请求发送某些链路项目的详细信息；
+</p>
+<p>
+	<strong>4）</strong>类型4。链路状态更新分组，用洪泛法对全网更新链路状态；
+</p>
+<p>
+	<strong>5）</strong>类型5。链路状态确认分组，对链路更新分组的确认。
+</p>

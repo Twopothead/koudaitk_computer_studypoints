@@ -1,0 +1,21 @@
+<p>
+	<span><b><span style="font-size:18px;color:#333333;">1. 路由器的工作流程</span></b></span> 
+</p>
+<p>
+	<b>第一步：</b>首先路由器从线路上<strong>接收分组</strong>，也就是下图的输入端口，经过1时进行物理层处理（进行比特的接收），经过2时进行数据链路层处理（剥去帧头、帧尾，得到了IP数据报），<span>然后分组就被送入网络层的模块。</span> 
+</p>
+<p>
+	<img src="png-jpeg-pics/B52FB1366D26652412C2F046A7D7E815.png" width="300" height="201" alt="" title="" align="" /> 
+</p>
+<p>
+	<span style="line-height:1.5;"><strong>第二步：</strong>网络层模块见下图。若接收的分组是路由器之间交换路由信息的分组（如RIP和OSPF分组），则把这种分组送交路由器的路由选择部分中的</span><strong><u>路由选择处理器</u></strong><span style="line-height:1.5;">。若接收的是数据分组，则按照分组首部中的目的地址查找转发表，根据得到的结果，分组就经过交换结构到达合适的输出端口。当一个分组正在查找转发表时，后面又紧跟着从这个输入端口收到另一个分组，这个分组就必须在队列中排队，因而产生了一定的时延，见下图。</span> 
+</p>
+<p>
+	<img src="png-jpeg-pics/E3D6CF6678B98A1A530712098CF0A617.png" width="310" height="119" alt="" title="" align="" /> 
+</p>
+<p>
+	<b>第三步：</b>从交换结构传送过来的分组先进行<strong>缓存</strong>，数据链路层处理模块将给分组加上数据链路层的首部和尾部，交给<strong>物理层</strong>后发送到外部线路，如下图所示。
+</p>
+<p>
+	<img src="png-jpeg-pics/86F764DD73A55B076A43A7E0DAA6F103.png" width="320" height="118" alt="" title="" align="" /> 
+</p>

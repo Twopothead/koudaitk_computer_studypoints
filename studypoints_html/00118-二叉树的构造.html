@@ -1,0 +1,26 @@
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">同一棵二叉树（结点值均不相同）具有唯一的先序、中序、后序和层次序列，但不同的二叉树可能具有相同的先序、中序、后序和层次序列。<span style="color:#E53333;"><u>二叉树的构造就是根据提供的某些遍历序列构造二叉树的结构。</u></span></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">关于二叉树的构造有以下几种方式，构造方法都是用递归的思想：</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>1. 由先序序列和中序序列构造二叉树</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><span style="font-size:16px;line-height:24px;">先序：根结点（左子树的先序）（右子树的先序）；中序：（左子树的中序）根结点（右子树的中序）。这样就能确定出根结点，同时又得到了左子树的先序和中序，右子树的先序和中序。继续找左右子树的根结点，直到子树的结点个数为1。构造完成。</span><br />
+</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>2. 由后序序列和中序序列构造二叉树</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><span style="font-size:16px;line-height:24px;">后序：（左子树的后序）（右子树的后序）根结点；中序：（左子树的中序）根结点（右子树的中序）。这样就能确定出根结点，同时又得到了左子树的后序和中序，右子树的后序和中序。继续找左右子树的根结点，直到子树的结点个数为1。构造完成。</span><br />
+</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>3. 由层次序列和中序序列构造二叉树</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">这个举例会更清晰些，例如中序为DGBAECF，层次遍历为ABCDEFG。由层次遍历得知，根结点为A。再根据中序就等到DGB为左子树的中序，ECF为右子树的中序。又子树的层次遍历的结点顺序跟整棵树的层次遍历的结点顺序一致。得到左子树的层次遍历为BDG，右子树的层次遍历为CEF。这样就知道了左子树的层次和中序，右子树的层次和中序，采用同样方法即可，构造出整个二叉树。</span> 
+</p>

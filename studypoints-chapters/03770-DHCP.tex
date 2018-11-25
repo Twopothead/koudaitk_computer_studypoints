@@ -1,0 +1,19 @@
+\textbf{{1. DHCP}}
+
+\textbf{{a.
+动态主机配置协议（DHCP）常用于给主机动态地分配IP地址。}}它提供了即插即用连网的机制，这种机制允许一台计算机加入新的网络和获取IP地址而不用手工参与。\textbf{DHCP是应用层协议}，\textbf{DHCP报文使用UDP传输}。
+
+\textbf{b.
+DHCP服务器分配给DHCP客户的IP地址是临时的}，因此DHCP客户只能在一段有限的时间内使用这个分配到的IP地址。DHCP协议称这段时间为租用期。
+
+\textbf{{2. DHCP服务器和DHCP客户端的交换过程}}
+
+\textbf{1）}DHCP客户机广播\textbf{``DHCP发现''消息}，试图找到网络中的DHCP服务器，服务器获得一个IP地址。
+
+\textbf{2）}DHCP服务器收到``DHCP发现''消息后，就向网络中广播\textbf{``DHCP提供''消息}，其中包括提供DHCP客户机的IP地址和相关配置信息。
+
+\textbf{3）}DHCP客户机收到``DHCP提供''消息，如果接受DHCP服务器所提供的相关参数，则通过广播\textbf{``DHCP请求''消息}向DHCP服务器请求提供IP地址。
+
+\textbf{4）}DHCP服务器广播\textbf{``DHCP确认''消息}，将IP地址分配给DHCP客户机。
+
+DHCP协议允许网络上配置多台DHCP服务器，当DHCP客户发出DHCP请求时，就有可能收到多个应答信息。这时，DHCP客户只会挑选其中的一个，\textbf{通常是挑选``最先到达的信息''。}\\

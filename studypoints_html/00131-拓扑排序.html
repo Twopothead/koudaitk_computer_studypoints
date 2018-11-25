@@ -1,0 +1,28 @@
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">AOV（Activity On Vertex network）网<span style="color:#E53333;">是一种顶点表示活动，边表示活动的先后次序，没有回路的有向图。</span></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">对一个有向无环图G进行拓扑排序，是将G中所有顶点排成一个线性序列，使得图中任意一对顶点u和v，若存在从u到v的路径，则u在线性序列中出现在v之前。</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;color:#E53333;">拓扑排序的步骤为：</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">1. 在有向图中选一个没有前驱的顶点并且输出之。</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">2. 从图中删除该顶点和所有以它为尾的弧。</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">3. 重复上述两步，直至全部顶点均已输出或图中剩余的顶点中都有前驱。后者说明有向图中有环。</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><span style="color:#E53333;"><strong><u>由于没有前驱的顶点可能不唯一，所以拓扑排序的结果也不唯一，</u></strong></span>如下图所示。</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><img src="png-jpeg-pics/1BE46EE02D14AF09C8488846718668CB.png" width="356" height="454" alt="" title="" align="" /><br />
+&nbsp;</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">故本例有3个不同的拓扑排序序列，分别为：abced、abecd、aebcd。</span> 
+</p>

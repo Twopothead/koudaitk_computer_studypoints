@@ -1,0 +1,14 @@
+<strong><span style="color:#333333;font-size:18px;">1．先来先服务（FCFS）算法</span></strong><br />
+<p>
+	FCFS算法是一种最简单的磁盘调度算法。该算法<span style="color:#E53333;"><strong><u>按进程请求访问磁盘的先后次序进行调度</u></strong></span>。<strong><u>该算法的特点是</u></strong><strong><u>合理、简单，但未对寻道进行优化。</u></strong> 
+</p>
+<strong><span style="color:#333333;font-size:18px;">2．最短寻道时间优先（SSTF）算法</span></strong><br />
+<p>
+	SSTF算法<span style="color:#E53333;"><u><strong>选择与当前磁头所在磁道距离最近的请求作为下一次服务的对象</strong></u></span>。该算法的寻道性能比FCFS算法好，但不能保证平均寻道时间最短，并且可能会使某些进程的请求总被其他进程的请求抢占而长期得不到服务（这种现象称为“饥饿”）。
+</p>
+<strong><span style="color:#333333;font-size:18px;">3．扫描算法（SCAN）或电梯调度算法</span></strong><br />
+<p>
+	SCAN算法<span style="color:#E53333;"><strong><u>在磁头当前移动方向上选择与当前磁头所在磁道距离最近的请求作为下一次服务的对象</u></strong></span>。由于这种算法中磁头移动的规律颇似电梯的运行，故也称为电梯调度算法。SCAN算法具有较好的寻道性能，又避免了“饥饿”现象，但其对两端磁道请求比较不公平（通常两端请求都是最后得到服务）<strong>。</strong> 
+</p>
+<strong><span style="color:#333333;font-size:18px;">4．循环扫描（CSCAN）算法</span></strong><br />
+CSCAN算法<span style="color:#E53333;"><strong><u>是对SCAN算法的改良，它规定磁头单向移动，例如，自里向外移动，当磁头移到最外磁道时立即返回到最里磁道，如此循环进行扫描</u></strong></span>。该算法消除了对两端磁道请求的不公平。

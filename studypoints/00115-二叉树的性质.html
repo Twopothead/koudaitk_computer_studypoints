@@ -1,0 +1,33 @@
+<p class="MsoNormal" style="text-indent:0cm;">
+	<b><span style="color:#E53333;">性质</span></b><b><span style="color:#E53333;">1</span></b><b><span style="color:#E53333;">：</span></b>非空二叉树上叶子结点数等于双分支结点数加1。设度为i的结点个数为ni。性质1等式表示即为：n0=n2+1。
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	<b><span style="color:#E53333;">性质</span></b><b><span style="color:#E53333;">2</span></b><b><span style="color:#E53333;">：</span></b>二叉树的第i层上最多有2<sup>i</sup><sup>-</sup><sup>1</sup>个结点（i≥1）
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	<b><span style="color:#E53333;">性质</span></b><b><span style="color:#E53333;">3</span></b><b><span style="color:#E53333;">：</span></b>高度为k的二叉树最多有2<sup>k</sup>-1个结点（k≥1）。
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	<b><span style="color:#E53333;">性质</span></b><b><span style="color:#E53333;">4</span></b><b><span style="color:#E53333;">：</span></b>有n个结点的完全二叉树，对各结点从上到下从左到有依次编号（1～n），则结点之间有如下关系：
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	若i为结点a的编号则：
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	如果i≠1，则a的双亲结点编号为<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=18cb1e&\lfloor{i/2}\rfloor" alt="" width="32" height="17" />。
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	如果2×i≤n，则a有左孩子，编号为2×i，反之无左孩子。
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	如果2×i+1≤n，则a有右孩子，编号为2×i+1，反之无右孩子。
+</p>
+<p class="MsoBodyTextIndent" style="text-indent:0cm;">
+	注：因为完全二叉树一般直接用数组存储，故通过双亲关系计算出下标的操作对完全二叉树来说是很重要的。
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	<b><span style="color:#E53333;">性质</span></b><b><span style="color:#E53333;">5</span></b><b><span style="color:#E53333;">：</span></b>给定<span>n</span>个结点，能构造出<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=3fa64c&C_{2n}^n/(n+1)" alt="" width="85" height="18" /><span>种</span>不同的二叉树。
+</p>
+<p class="MsoNormal" style="text-indent:0cm;">
+	<b><span style="color:#E53333;">性质</span></b><b><span style="color:#E53333;">6</span></b><b><span style="color:#E53333;">：</span></b>具有<span>n</span>个结点的完全二叉树的深度<span>k</span>为<sub> <img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=d2f760&\lfloor\log\limits_{\rm2}n\rfloor+1" alt="" width="81" height="17" /></sub>或<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=417732&\lceil\log\limits_{\rm2}{(n+1)}\rceil" alt="" width="92" height="18" />。
+</p>

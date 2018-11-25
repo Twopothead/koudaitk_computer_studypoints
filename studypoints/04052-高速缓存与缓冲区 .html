@@ -1,0 +1,42 @@
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">1．缓冲的引入</span></strong> 
+</p>
+<p>
+	a. 基本概念：虽然中断、DMA和通道控制技术使得系统中设备和设备、设备和CPU得以并行运行，但是设备和CPU处理速度不匹配的问题是客观存在的，这个问题制约了计算机系统性能的进一步提高。另一方面，<strong><u>引入缓冲后可以降低设备对CPU的中断频率，放宽对中断响应时间的限制</u></strong>。
+</p>
+<p>
+	b. 缓冲的实现方法：一种是<strong><u>采用</u></strong><strong><u>硬件缓冲器实现</u></strong>，但由于其成本太高，除一些关键部位外，一般情况下不采用硬件缓冲器；另一种实现方法是<strong><u>在内存划出一块存储区</u></strong>，专门用来临时存放输入输出数据，这个区域称为缓冲区。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">2．缓冲的分类</span></strong> 
+</p>
+<p>
+	<strong>a. 单缓冲：</strong><span style="line-height:1.5;">在块设备输入时，先从磁盘把一块数据输入到缓冲区，假设所用时间为t；然后由操作系统将缓冲区的数据传送到用户区，假设所用时间为m；接下来，CPU对这一块数据进行计算，假设计算时间为c；则系统对每一块</span><strong><span style="color:#E53333;"><u>数据的处理时间为max(c, t)+m（通常m远小于t或c）</u></span>。</strong> 
+</p>
+<p>
+	<strong>b. 双缓冲：</strong>引入双缓冲可以提高处理器与设备的并行操作程度。<u>系统处理一块数据的时间可以估计为max(c, t)。如果c&lt;t，则可使块设备连续输入；如果c&gt;t，则可使处理器连续计算。</u> 
+</p>
+<p>
+	<strong>c. 循环缓冲：</strong><strong><u>in指针指向可以输入数据的第一个空缓冲区</u></strong><span style="line-height:1.5;">；当用户进程需要数据时，从循环缓冲中取出一个装满数据的缓冲区，提取数据，</span><strong><u>out指针指向可以提取数据的第一个满缓冲区</u></strong><span style="line-height:1.5;">。显然，对输出而言正好相反，进程将处理过的需要输出的数据送到空缓冲区中，而当设备空闲时，从满缓冲区中取出数据由设备输出。</span> 
+</p>
+<p>
+	<strong>d. 缓冲池：</strong>缓冲池中的缓冲区按其使用状况可以形成3个队列：<strong><u>空缓冲队列、</u></strong><strong><u>装满输入数据的缓冲队列（输入队列）</u></strong><strong><u>、</u></strong><strong><u>装满输出数据的缓冲队</u></strong><strong><u>列（输出队列）</u>。</strong><span style="line-height:1.5;">除上述3个队列之外，还应具有4种工作缓冲区：</span><strong><u>用于收容输入数据的工作缓冲区、</u></strong><strong><u>用于提取输入数据的工作缓冲区、</u></strong><strong><u>用于收容输出数据的工作缓冲区、</u></strong><strong><u>用于提取输出数据的工作缓冲区</u>。</strong> 
+</p>
+<p>
+	<strong>工作方式：</strong><strong>当输入进程需要</strong><strong>输入数据时</strong><strong>，</strong>便从空缓冲队列的队首摘下一个空缓冲区，把其作为收容输入数据的工作缓冲区，然后把数据输入其中，装满后再将它挂到输入队列队尾。<strong>当计算进程需要输入数据时</strong>，便从输入队列取得一个缓冲区作为提取输入数据的工作缓冲区，计算进程从中提取数据，数据用完后再将其挂到空缓冲队列队尾。<strong>当计算进程需要输出数据时，</strong>便从空缓冲队列的队首取得一个空缓冲区，作为收容输出数据的工作缓冲区，当其中装满输出数据后，再将其挂到输出队列队尾。<strong>当要输出时，</strong>由输出进程从输出队列中取得一个装满输出数据的缓冲区，作为提取输出数据的工作缓冲区，当数据提取完后，再将其挂到空缓冲队列的末尾。
+</p>
+<p>
+	<span style="color:#E53333;"><span style="font-size:18px;color:#E53333;"><strong>3．高速缓存与缓冲</strong></span><span style="color:#E53333;font-size:18px;"><strong>区</strong></span></span> 
+</p>
+<p>
+	<strong>a. <u>高速缓存是可以保存数据备份的高速存储器</u>。</strong>访问高速缓存要比访问原始数据更高效，速度更快。虽然高速缓存和缓冲区均介于一个高速设备和一个低速设备之间。
+</p>
+<p>
+	<strong>b. 高速缓存与缓冲区的区别：</strong> 
+</p>
+<p>
+	<strong>1）两者存放的数据不同。</strong>高速缓存上放的是低速设备上的某些数据的一个备份，也就是说，<strong><span style="color:#E53333;"><u>高速缓存上有的数据，低速设备上必然有</u></span></strong>；而缓冲区中放的则是低速设备传递给高速设备的数据，这些<span style="color:#E53333;"><strong><u>数据从低速设备传递到缓冲区中，然后再从缓冲区送到高速设备，而在低速设备中却不一定有备份</u></strong></span>。
+</p>
+<p>
+	<strong>2）两者的目的不同。</strong>引入高速缓存是为了<span style="color:#E53333;"><strong><u>存放低速设备上经常要被访问到的数据的备份</u></strong></span>，这样一来，高速设备就不需要每次都访问低速设备，但是如果要访问的数据不在高速缓存中，那么高速设备还是需要访问低速设备；而<span style="color:#E53333;"><strong><u>缓冲区是为了缓和高速设备和低速设备间速度不匹配的矛盾</u></strong></span>，高速设备和低速设备间通信每次都要经过缓冲区，高速设备不会直接去访问低速设备。
+</p>

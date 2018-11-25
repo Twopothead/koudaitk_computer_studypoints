@@ -1,0 +1,28 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1. UDP校验</span></strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#000000;">a. </span></span><strong><span style="color:#E53333;"><span style="color:#E53333;"><u>UDP校验只提供差错检测</u></span><span style="color:#E53333;"><u>。</u></span></span></strong> 
+</p>
+<p>
+	b. 在计算校验和时，<u>要在UDP用户数据报之前临时加上12B的伪首部</u>。<span style="line-height:1.5;">其中，伪首部包括源IP地址字段、目的IP地址字段、全0字段、协议字段（UDP固定为17）、UDP长度字段。</span> 
+</p>
+<p>
+	<span style="line-height:1.5;"><strong><span style="color:#E53333;">注意：</span></strong><u>一定要记住伪首部只用于计算和验证校验和，其既不向下传送，也不向上递交</u>。</span> 
+</p>
+<span><span style="font-size:18px;color:#333333;"><strong>2. UDP校验的注意事项</strong></span></span><br />
+<p>
+	<strong>1）</strong>校验的时候若UDP数据报数据部分的长度不是偶数字节，则需要填入一个全0B，如下图所示。但是此字节和伪首部一样，是不发送的。
+</p>
+<p>
+	<strong>2）</strong>如果UDP校验和校验出UDP数据报是错误的，可以丢弃，也可以交付给上层，但是需要附上错误报告，即告诉上层这是错误的数据报。
+</p>
+<p>
+	<strong>3）</strong>通过伪首部，不仅可以检查源端口号、目的端口号和UDP用户数据报的数据部分，<strong><u>还可以检查IP数据报的源IP地址和目的地址。</u></strong> 
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/3D3FDD1E49C063F30606CFD1913A3BBA.png" width="320" height="205" alt="" title="" align="" /> 
+</p>
+<p>
+	按二进制反码计算后，<strong>当无差错时其结果应该为全1</strong>；否则就表明有差错出现，接收方就应该丢弃这个UDP报文。
+</p>

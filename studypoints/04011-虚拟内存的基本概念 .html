@@ -1,0 +1,24 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．虚拟内存的引入原因</span></strong> 
+</p>
+<p>
+	<span style="line-height:1.5;">前面的方法都具有如下两个特点：一次性（作业全部装入内存后才能执行）和驻留性（作业常驻内存直到运行结束）。它们均难以满足较大的作业或者较多的作业进入内存执行。因此，</span><strong><span style="color:#E53333;"><u>引入了一种能够让作业部分装入就可以运行的存储管理技术，即虚拟内存管理技术</u></span><span style="color:#E53333;"><u>。</u></span></strong> 
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．局部性原理</span></strong> 
+</p>
+<p>
+	a.<strong> 时间局部性：</strong>即一条指令的一次执行和下次执行，一个数据的一次访问和下次访问，都集中在一个较短的时期内。
+</p>
+<p>
+	b. <strong>空间局部性：</strong>即当前指令和邻近的几条指令，当前访问的数据和邻近的数据，都集中在一个较小的区域内。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">3．虚拟内存的定义及特征</span></strong> 
+</p>
+<p>
+	<span style="line-height:1.5;">a. <strong>基本原理：</strong>基于局部性原理，将程序一部分装入就开始运行，需要某部分时就将它调入内存，不需要时再调出内存。</span> 
+</p>
+<p>
+	b. <strong>基本特征：</strong><strong>离散型，</strong>即程序在内存中离散存储；<strong>多次性，</strong>即<span style="line-height:1.5;">一个作业可以分成多次调入内存；<strong>对换性，</strong></span><span style="line-height:1.5;">作业在运行过程中可以换入、换出；<strong>虚拟性，</strong></span><span style="line-height:1.5;">从逻辑上扩充内存容量，用户可以使用的空间可以远大于实际内存容量。</span> 
+</p>

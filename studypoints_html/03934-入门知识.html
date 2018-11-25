@@ -1,0 +1,218 @@
+<p>
+	<span style="color:#E53333;"><strong>可能疑问点：我是零基础的跨专业考生，要不要先看数字电路等基础知识？直接看计算机组成原理教材可以理解吗？</strong></span> 
+</p>
+<p>
+	解答：想必以上问题是95%跨专业考生必问的。当然，两年前编者作为零基础的跨专业考生，也问过类似的问题。现在编者以一个过来者的身份很肯定地回答你：只需学习一些基础的辅助知识（考研的范围要求）。
+</p>
+<p>
+	<strong>在讲解考研知识点之前，</strong>此书先给读者介绍一些计算机组成原理的辅助知识，在以后的讲解中就不再重复了。
+</p>
+<h2>
+	<span style="font-size:24px;">入门知识</span><span style="font-size:24px;">1</span><span style="font-size:24px;">：了解门电路</span> 
+</h2>
+<p>
+	在考研知识范围内，门电路不会考查得很复杂，考生只需了解几个基本的门电路即可。
+</p>
+<p>
+	顾名思义，“门”起到开关的作用，如某公司要招聘员工，公司对待招聘员工的要求是既要有技术，又要沟通能力好，因此只要应聘的人同时满足这两个要求就有可能被公司录用。然而，不同的公司对员工有不同的要求，如另外一家公司可能只要技术和沟通能力满足其一即可，那么又可以形成新的“门”。同理，在计算机中，如果有多个输入端，此“门”就可以对这些输入端“提出”要求，如每个输入端都是高电平，“门”才打开；或者多个输入端只要有一个是高电平，“门”就打开。以上就是门电路的基本涵义。
+</p>
+<p>
+	<strong>下面介绍常用的6种门电路，</strong>以下假设都只有两个输入端，实际情况则可能有多个输入端。
+</p>
+<p>
+	<strong>（1）与门（有假即假）</strong> 
+</p>
+<p>
+	<strong><img src="png-jpeg-pics/6AE5A9793FA0116A4D45F1A16270088B.png" width="171" height="93" alt="" title="" align="" /><br />
+</strong> 
+</p>
+<p>
+	说明：当所有输入同时为“1”电平时，输出才为“1”电平，否则输出为“0”电平，见下表。
+</p>
+<p>
+	<img src="png-jpeg-pics/DA408AA7FED02B9C1B2633C900432551.png" width="413" height="169" alt="" title="" align="" /> 
+</p>
+<p>
+	<strong>（2）或门（有真即真）</strong><strong></strong> 
+</p>
+<p>
+	<strong><img src="png-jpeg-pics/0A256D214CCCBE7B49FCE20794D709D4.png" width="201" height="106" alt="" title="" align="" /><br />
+</strong> 
+</p>
+<p>
+	说明：多个输入端只要有一个输入端为“1”电平，输出就为“1”电平，只有所有输入端同时为“0”电平，输出才为“0”电平，见下表。
+</p>
+<p>
+	<img src="png-jpeg-pics/AB0DE573A20905AF9A0706947114536D.png" width="369" height="144" alt="" title="" align="" /> 
+</p>
+<p>
+	<strong>（3）非门（取反运算）</strong><strong></strong> 
+</p>
+<p>
+	<strong><img src="png-jpeg-pics/8627D3244B0E860C7C65D99E20C1530C.png" width="193" height="102" alt="" title="" align="" /><br />
+</strong> 
+</p>
+<p>
+	说明：输入“1”电平，输出“0”电平；输入“0”电平，输出“1”电平（图中小圈表示取反），见下表。
+</p>
+<p>
+	<img src="png-jpeg-pics/1535D421BF89ACB5B14E24DCA067C2FA.png" width="256" height="105" alt="" title="" align="" /> 
+</p>
+<p>
+	<br />
+</p>
+<p class="p0">
+	<strong>（</strong><span><strong>4</strong></span><span><strong>）</strong></span><strong>或非门</strong> 
+</p>
+<p class="p0">
+	<strong><img src="png-jpeg-pics/D079595E56F2D3CB2F78C23936D44790.png" width="169" height="100" alt="" title="" align="" /><br />
+</strong> 
+</p>
+<p class="p0">
+	说明：和“或”门基本一样，只是将结果取反而已（图中小圈表示取反），见下表。
+</p>
+<p class="p0">
+	<img src="png-jpeg-pics/FB3022CE90E7192C26CB9F14823D7670.png" width="380" height="159" alt="" title="" align="" /> 
+</p>
+<p class="p0">
+	<br />
+</p>
+<p class="p0">
+	<strong>（</strong><span><strong>5</strong></span><span><strong>）</strong></span><strong>与非门</strong> 
+</p>
+<img src="png-jpeg-pics/2E17F84C335C2A64461F0AC131328919.png" width="173" height="98" alt="" title="" align="" /> 
+<p>
+	<br />
+</p>
+<p class="p0">
+	说明：和“与”门基本一样，只是将结果取反而已，见下表。
+</p>
+<p class="p0">
+	<img src="png-jpeg-pics/49990617AA06F48B25F8E30E91AE7C87.png" width="364" height="147" alt="" title="" align="" /> 
+</p>
+<p class="p0">
+	<br />
+</p>
+<p class="p0">
+	<strong>（</strong><span><strong>6</strong></span><span><strong>）</strong></span><strong>异或门</strong> 
+</p>
+<p class="p0">
+	<strong><img src="png-jpeg-pics/F1D7924BCB9866CBE0EA1D40F7786A5E.png" width="203" height="98" alt="" title="" align="" /><br />
+</strong> 
+</p>
+说明：输入电平相同时，输出“0”电平；输入电平不同时，输出“1”电平。助记：同号相乘为正（0），异号相乘为负（1）。第2章介绍乘法符号的处理时会用到“异或”门，见下表。
+<p>
+	<br />
+</p>
+<p class="p0">
+	<img src="png-jpeg-pics/61F80E6C7CEDC5C8ADE5A753CCC9271C.png" width="368" height="159" alt="" title="" align="" /> 
+</p>
+<p class="p0">
+	<span style="color:#E53333;">注意：在输入端当然也可以使用小圈，只要记住图中小圈表示取反即可。</span> 
+</p>
+<h2>
+	<span style="font-size:24px;">入门知识2</span><span style="font-size:24px;">：三态门</span> 
+</h2>
+<p class="p0">
+	<strong>三态门：</strong>指逻辑门的输出端除有高、低电平两种状态外，还有第3种状态——高阻态（电路图参考下图）。高阻态相当于隔断状态（因为实际电路中不可能去断开它，所以设置这样一个状态，使它处于隔断状态），<strong>例如，</strong>内存中的一个存储单元，当读写控制线处于低电平时，存储单元被打开，可以写入数据；当处于高电平时，可以读出数据；但不读不写时，就要用高阻态，就像把该存储单元隔离开来一样。更直白的解释是，<strong>高阻态</strong>就是一个开关，当处于高阻态时，逻辑门什么也不能做。
+</p>
+<p class="p0">
+	<img src="png-jpeg-pics/1A36DC3D965B35D598C8B9358E05D23A.png" width="139" height="83" alt="" title="" align="" /> 
+</p>
+<p class="p0">
+	说明：当A为高电平时，C→B导通；当A为低电平时，C→B不导通，此时为高阻态。
+</p>
+<h2>
+	<span style="font-size:24px;">入门知识3</span><span style="font-size:24px;">：片选译码器</span> 
+</h2>
+<p class="p0">
+	该知识点主要介绍最常用的3-8译码器（或称74138译码器，属于存储器与CPU连接中的片选译码器），其他的译码器（如2-4译码器、4-16译码器）原理都相似。常用的3-8译码器如下图所示：
+</p>
+<p class="p0">
+	<img src="png-jpeg-pics/65104586957731D9682662843438BA6B.png" width="278" height="291" alt="" title="" align="" /> 
+</p>
+<p class="p0">
+	<img src="png-jpeg-pics/91C84C51CABCAAD6E19945EA4870BE74.png" width="356" height="220" alt="" title="" align="" /><br />
+<img src="png-jpeg-pics/3DA4369AE81F8AFFF754C71BC6D1C3D4.png" width="356" height="231" alt="" title="" align="" /> 
+</p>
+<p class="p0">
+	<strong></strong><strong><span style="font-size:24px;">入门知识4：那些可怕的专业术语</span></strong> 
+</p>
+<p class="p0">
+	<strong>（1）系列机</strong> 
+</p>
+<p class="p0">
+	系列机是指一个厂家生产的具有相同系统结构、不同组成和实现的一系列不同型号的机器。它应在指令系统、数据格式、字符编码、中断系统、控制方式、输入/输出控制方式等方面保持统一，从而保证软件的兼容性。
+</p>
+<p class="p0">
+	<strong>（2）阿姆代尔定律（Amdahl’s &nbsp;Law）</strong> 
+</p>
+<p class="p0">
+	阿姆代尔定律是指系统优化某部件所获得的系统性能的改善程度，取决于该部件被使用的频率，或占用总执行时间的比例。该定律很好地刻画了改善“系统瓶颈”性能的重要性。
+</p>
+<p class="p0">
+	<strong>（3）基准测试程序</strong> 
+</p>
+<p class="p0">
+	基准测试程序是专门用来进行性能评价的一组程序，这些程序能够很好地反映机器在运行实际负载时的性能。可以在不同机器上运行相同的基准测试程序来比较不同机器的运行时间，从而比较其性能。
+</p>
+<p class="p0">
+	<strong>（4）最低有效位、最高有效位、最低有效字节、最高有效字节</strong> 
+</p>
+<p class="p0">
+	最低有效位：一个二进制数中的最低位，例如二进制数1110中的“0”。<br />
+最高有效位：一个二进制数中的最高位，例如二进制数0111中的“0”。<br />
+最低有效字节：一个二进制数中的最低字节，例如二进制数1111 1111 0000 0000 1111 0000中的“1111 0000”。<br />
+最高有效字节：一个二进制数中的最高字节，例如二进制数1111 1111 0000 0000 1111 0000中的“1111 1111”。
+</p>
+<p class="p0">
+	<strong>（5）基数</strong> 
+</p>
+<p class="p0">
+	若进位计数制的“基数”为R，第n位数的权即Rn-1，则只要将各位数字与它的权相乘，并将其积累加，和数就是十进制数，例如，二进制数的基数是“2”，十进制数的基数为“10”，十六进制的基数为“16”。
+</p>
+<p class="p0">
+	<strong>（6）逻辑数据</strong> 
+</p>
+<p class="p0">
+	逻辑数据用来表示命题的“真”和“假”，分别用“1”和“0”来表示。进行逻辑运算时，应按位进行。<br />
+<span style="line-height:1.5;"></span> 
+</p>
+<h2>
+	<span style="font-size:24px;">入门知识</span><span style="font-size:24px;">5</span><span style="font-size:24px;">：与存储相关的那些名词</span> 
+</h2>
+<p class="p0">
+	<span style="line-height:1.5;">有关存储的概念类包含存储元、存储单元、存储体、存储字和存储字长等，见下表。</span> 
+</p>
+<p class="p0">
+	<strong>情景助记：</strong>假设将医院的整个住院部看成一个存储体，住院部由一个个病房组成（假设每个病房的床位数量都相等），那么每个病房就是一个存储单元，病房中的每张床就是一个存储元，每个病房的床位数量就是存储字长。<br />
+现假设病床上躺的都是0和1，而每间病房肯定都对应一串二进制代码。如果某病房二进制代码为10001000，则这串二进制代码可表示为十进制数136，也可以表示为十六进制数88H，当然也直接可以代表8位的二进制数。综上所述，可以将每个存储单元中二进制代码的组合看。
+</p>
+<p class="p0">
+	<img src="png-jpeg-pics/FC0C09D9C1D6B8FA4AF02309C41F2895.png" width="319" height="230" alt="" title="" align="" /> 
+</p>
+<h2>
+	<span style="font-size:24px;">入门知识6</span><span style="font-size:24px;">：与字、字长相关的那些名词</span> 
+</h2>
+<h2>
+	<span style="line-height:1.5;font-size:12px;font-weight:normal;">1B=8bit，这个是规定，没有错误。但是很多考生认为一个字等于两个字节，因为他们脑海中有一种概念：一个汉字占用两个字节。计算机中的字和汉字中的字的概念不一样。计算机中的字通常由一个或多个（一般是字节的整数倍）字节构成。现在常用的都是32位（4个字节）字长的机器。</span> 
+</h2>
+<h2>
+	<span style="font-size:12px;font-weight:normal;line-height:1.5;">以前是存储字长等于机器字长，因为机器字长是机器一次能处理的比特数，这样一次取一个等长的存储字便于机器处理。现在机器字长一般大于存储字长。</span> 
+</h2>
+<h2>
+	<span style="font-size:12px;font-weight:normal;line-height:1.5;background-color:#FFFFFF;"><strong><u>一般默认字长=机器字长=存储字长</u></strong>。</span> 
+</h2>
+<h2>
+	<span style="font-weight:normal;font-size:24px;background-color:#FFFFFF;"><strong>入门知识7</strong></span><span style="font-weight:normal;font-size:24px;background-color:#FFFFFF;"><strong>：与周期相关的那些名词</strong></span> 
+</h2>
+<p>
+	<span style="font-size:12px;font-weight:normal;line-height:1.5;background-color:#FFFFFF;">有关周期的概念主要有以下几种，见下表</span> 
+</p>
+<p>
+	<span style="font-size:12px;font-weight:normal;line-height:1.5;background-color:#FFFFFF;"><img src="png-jpeg-pics/6EA31B167B4F1FE19AFEBA0749A267DD.png" width="355" height="168" alt="" title="" align="" /><br />
+</span> 
+</p>
+<p>
+	<br />
+</p>

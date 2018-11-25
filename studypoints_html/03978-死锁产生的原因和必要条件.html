@@ -1,0 +1,21 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．资源分类</span></strong> 
+</p>
+<p>
+	<strong>可剥夺资源：</strong>是指虽然资源占有者进程需要使用该资源，但另一个进程可以强行把该资源从占有者进程处剥夺来归自己使用。<br />
+<strong>不可剥夺资源：</strong>是指除占有者进程不再需要使用该资源而主动释放资源，其他进程不得在占有者进程使用资源过程中强行剥夺。
+</p>
+<strong><span style="color:#333333;font-size:18px;">2．死锁产生的原因</span></strong> 
+<p>
+	<strong>a. </strong>死锁产生的原因是<span style="color:#E53333;"><strong>竞争资源</strong></span>；<br />
+<strong>b. </strong>虽然资源竞争可能导致死锁，但是<strong><u>资源竞争并不等于死锁</u></strong>，<span style="color:#E53333;"><strong>死锁产生的原因是系统资源不足和进程推进顺序不当</strong></span>；<br />
+<strong>c. </strong><span style="color:#E53333;"><strong>系统资源不足</strong></span>是产生死锁的根本原因。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">3．死锁产生的必要条件</span></strong><br />
+<strong>a. </strong>互斥条件；<br />
+<strong>b. </strong>不剥夺条件；<br />
+<strong>c. </strong>请求与保持条件；<br />
+<strong>d. </strong>环路等待条件；<br />
+要产生死锁，这4个条件缺一不可，因此可以<strong><u>通过破坏其中的一个或几个条件来避免死锁</u></strong>的产生。
+</p>

@@ -1,0 +1,51 @@
+<p>
+	<strong><span style="font-size:24px;">1. 拥塞控制</span></strong> 
+</p>
+<p>
+	<strong>a. 条件：</strong><span style="line-height:1.5;">出现资源拥塞的条件是</span><span style="line-height:1.5;">对</span><strong><u>资源需求的总和&gt;可用资源</u></strong><span style="line-height:1.5;">；</span> 
+</p>
+<p>
+	<strong>b. 后果：</strong>若网络中产生拥塞，网络的性能就要明显变坏，整个网络的吞吐量将随输入负荷的增大而下降
+</p>
+<p>
+	<strong><span style="font-size:24px;">2. 拥塞控制与流量控制的区别</span></strong> 
+</p>
+<p>
+	<strong>1）</strong>拥塞控制所要做的只有一个前提，就是<span style="color:#E53333;"><strong><u>使得网络能够承受现有的网络负荷</u></strong></span><u>。</u> 
+</p>
+<p>
+	<strong>2）</strong>拥塞控制<span style="color:#E53333;"><strong><u>是一个全局性的过程，涉及所有的主机、所有的路由器</u></strong></span>以及与降低网络传输性能有关的所有因素。
+</p>
+<p>
+	<strong>3）</strong>流量控制往往指在<strong><span style="color:#E53333;"><u>给定的发送端和接收端之间的点对点</u></span></strong>通信量的控制。
+</p>
+<p>
+	<strong>4）</strong>流量控制所要做的就是抑制发送端发送数据的速率，以便使接收端来得及接收。
+</p>
+<p>
+	<strong>5）</strong>拥塞控制是很难设计的，因为它<span style="color:#E53333;"><strong><u>是一个动态的（而不是静态的）问题</u></strong></span>。
+</p>
+<p>
+	<strong>6）</strong>当前网络正朝着高速化的方向发展，这很容易出现缓存不够大而造成分组的丢失。但分组的丢失是网络发生拥塞的征兆而不是原因。
+</p>
+<p>
+	<strong>7）</strong>在许多情况下，甚至正是拥塞控制本身成为引起网络性能恶化甚至发生死锁的原因，这点应特别引起重视。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:24px;">3. 拥塞控制的分类</span></strong> 
+</p>
+<p>
+	<strong>1）开环控制：</strong>在设计网络时<span style="color:#E53333;"><strong><u>事先将有关发生拥塞的因素考虑周到</u></strong></span>，力求网络在工作时不产生拥塞。
+</p>
+<p>
+	<strong>2）闭环控制：</strong>是<span style="color:#E53333;"><strong><u>基于反馈环路的概念</u></strong></span>。属于闭环控制的有以下几种措施：
+</p>
+<p>
+	① 监测网络系统以便检测到拥塞在何时、何处发生；
+</p>
+<p>
+	② 将拥塞发生的信息传送到可采取行动的地方；
+</p>
+<p>
+	<span style="line-height:1.5;">③ 调整网络系统的运行以解决出现的问题。</span> 
+</p>

@@ -1,0 +1,42 @@
+<p>
+	<span style="line-height:1.5;"><strong><span style="color:#333333;font-size:18px;">1. 线程的引入</span></strong><br />
+</span> 
+</p>
+<p>
+	进程的两个基本属性：<br />
+a. 进程是一个拥有资源的独立单元；<br />
+b. 进程同时又是一个可以被处理器独立调度和分配的单元。<br />
+为了使多个程序更好地并发执行，并尽量减少操作系统的开销，<u><span style="color:#E53333;">操作系统设计者引入了线程，让线程去完成第二个基本属性的任务</span></u>，而进程只完成第一个基本属性的任务。
+</p>
+<p>
+	<span style="font-size:18px;">2.&nbsp;</span><strong><span style="font-size:18px;">线程的定义</span></strong> 
+</p>
+<p>
+	<span style="line-height:1.5;">线程是<u>进程内一个相对独立的、可调度的执行单元</u>。线程自己基本上不拥有资源，只拥有一点在运行时必不可少的资源（如程序计数器、一组寄存器和栈），但它可以与同属一个进程的其他线程共享进程拥有的全部资源。</span><span style="line-height:1.5;">多线程是指一个进程中有多个线程，这些线程共享该进程资源。</span><strong>但是各线程自己堆栈数据不对其他线程共享</strong><span style="line-height:1.5;">。</span> 
+</p>
+<strong><span style="font-size:18px;">3. 线程的实现</span></strong> 
+<p>
+	<span style="color:#E53333;"><strong>a. 内核级线程：</strong></span><span style="color:#333333;">指依赖于内核，由操作系统内核完成创建和撤销工作的线程</span><span style="color:#333333;">。</span> 
+</p>
+<p>
+	<span style="color:#333333;"><span style="color:#E53333;"><strong>b. 用户级线程</strong></span><strong>：</strong></span><span style="color:#333333;">指不依赖于操作系统核心，由应用进程利用线程库提供创建、同步、调度和管理线程的函数来控制的线程</span><span style="color:#333333;">。</span> 
+</p>
+<strong><span style="color:#E53333;"><strong><span style="font-size:18px;color:#333333;">4.&nbsp;</span></strong><span style="font-size:18px;color:#333333;">线程与进程的比较</span></span></strong> 
+<p>
+	<strong><span style="color:#E53333;">a. 调度：</span></strong>在传统的操作系统中，拥有资源和独立调度的基本单位都是进程。而在引入线程的操作系统中，线程是独立调度的基本单位，进程是拥有资源的基本单位。<span style="color:#333333;"><u>在同一进程中，线程的切换不会引起进程切换。在不同进程中进行线程切换，如从一个进程内的线程切换到另一个进程中的线程中，将会引起进程切换。</u></span> 
+</p>
+<strong><span style="color:#E53333;">b. 拥有资源：</span></strong>进程是拥有资源的基本单位，而线程不拥有系统资源（也有一点必不可少的资源，并非什么资源都没有），但线程可以访问其隶属进程的系统资源。<br />
+<p>
+	<strong><span style="color:#E53333;">c. 并发性：</span></strong>在引入线程的操作系统中，不仅进程之间可以并发执行，而且同一进程内的多个线程之间也可以并发执行。
+</p>
+<p>
+	<strong><span style="color:#E53333;">d. 系统开销：</span></strong>由于创建进程或撤销进程时，系统都要为之分配或回收资源，系统开销较大；而线程切换时，只需保存和设置少量寄存器内容，因此开销很小。
+</p>
+<strong><span style="color:#333333;font-size:18px;">5．多线程模型</span></strong> 
+<p>
+	<strong><span style="color:#E53333;">a. 多对一模型：</span></strong>多对一模型将多个用户级线程映射到一个内核级线程上。<strong>只要一个用户级线程阻塞，就会导致整个进程阻塞。</strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;">b. 一对一模型：</span></strong>一对一模型将内核级线程与用户级线程一一对应。<strong>这样做的好处是当一个线程阻塞时，不影响其他线程的运行</strong>。
+</p>
+<strong><span style="color:#E53333;">c. 多对多模型：</span></strong>多对多模型将多个用户级线程映射到多个内核级线程，采用这样的模型可以打破前两种模型对用户级线程的限制，不仅可以使<strong>多个用户级线程真正意义上并行执行，而且不会限制用户级线程的数量。</strong>

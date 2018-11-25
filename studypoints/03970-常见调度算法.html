@@ -1,0 +1,69 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．先来先服务调度算法</span></strong> 
+</p>
+<p>
+	<span style="color:#333333;font-size:14px;"><span style="font-size:14px;">适用范围：可用于作业调度和进程调度。</span></span> 
+</p>
+<p>
+	基本思想是<strong><span style="color:#E53333;"><u>按照进程进入就绪队列的先后次序来分配处理器</u></span>。</strong>先来先服务调度算法采用<u><strong>非抢占的调度方式。</strong></u> 
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．短作业优先调度算法</span></strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#333333;">适用范围：可用于作业调度和进程调度。</span><span style="color:#333333;font-size:18px;line-height:27px;"></span></span> 
+</p>
+基本思想是<strong><span style="color:#E53333;"><u>把处理器分配给最快完成的作业（或进程）</u></span></strong><span style="line-height:1.5;">。<br />
+</span> 
+<p>
+	<strong><span style="color:#333333;font-size:18px;">3．优先级调度算法</span></strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#E53333;"><span style="color:#333333;">适用范围：可用于作业调度和进程调度。</span><span style="color:#333333;font-size:18px;line-height:27px;"></span></span></span> 
+</p>
+<p>
+	基本思想是<strong><span style="color:#E53333;"><u>把处理器分配给优先级最高的进程</u></span>。</strong><span style="line-height:1.5;">进程优先级通常分为两种：</span> 
+</p>
+<p>
+	a. 静态优先级：<strong>是指优先级在创建进程时就已经确定了，在整个进程运行期间不再改变。</strong> 
+</p>
+<p>
+	b. 动态优先级：<strong>是指在创建进程时，根据进程的特点及相关情况确定一个优先级</strong>，在进程运行过程中再根据情况的变化调整优先级。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">4．时间片轮转调度算法</span></strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#E53333;"><span style="color:#333333;">适用范围：主要用于进程调度。</span><span style="color:#333333;font-size:18px;line-height:27px;"></span></span></span> 
+</p>
+<p>
+	基本思想是<span style="color:#E53333;"><u><strong>处于就绪队列中的进程就可以</strong></u></span><strong><span style="color:#E53333;"><u>依次轮流获得一个时间片的处理时间</u></span></strong><span style="color:#E53333;"><u><strong>，然后重新回到队列尾部排队等待执行，如此不断循环，直至完成</strong></u></span>。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">5．高响应比优先调度算法</span></strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#E53333;"><span style="color:#333333;">适用范围：主要用于作业调度。</span></span></span> 
+</p>
+<p>
+	基本思想是<span style="color:#E53333;"><u><strong>每次进行作业调度时，先计算就绪队列中的每个作业的响应比，挑选响应比最高的作业投入运行</strong></u></span>。响应比的计算公式如下：
+</p>
+<p>
+	响应比= 作业响应时间/估计运行时间，或者
+</p>
+<p>
+	响应比=(作业等待时间+估计运行时间)/估计运行时间
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">6．多级队列调度算法</span></strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#E53333;"><span style="color:#333333;">适用范围：主要用于进程调度。</span><span style="color:#333333;font-size:18px;line-height:27px;"></span></span><span style="color:#E53333;"></span></span> 
+</p>
+<p>
+	基本思想是<strong><span style="color:#E53333;"><u>根据进程的性质或类型，将就绪队列划分为若干个独立的队列，每个进程固定地分属于一个队列。</u></span></strong><strong><span style="color:#E53333;"><u>每个队列采用一种调度算法，不同的队列可以采用不同的调度算法。</u></span></strong> 
+</p>
+<strong><span style="color:#333333;font-size:18px;">7．多级反馈队列调度算法</span></strong><br />
+<p>
+	多级反馈队列调度算法是时间片轮转调度算法和优先级调度算法的综合与发展。具体讲解手机上观看不方便哦，请前往《操作系统高分笔记》的详细讲解。
+</p>

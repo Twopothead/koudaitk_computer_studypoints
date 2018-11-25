@@ -1,0 +1,59 @@
+<strong><span style="color:#333333;font-size:18px;">1．文件目录</span></strong><br />
+<p>
+	a. 基本概念：文件的组织可以通过目录来实现，文件说明的集合称为文件目录。<strong><u>目录最基本的功能就是通过文件名存取文件</u>。</strong> 
+</p>
+<p>
+	b. 基本功能：<strong><u>实现“按名存取”、</u></strong><strong><u>提高检索速度、</u></strong><strong><u>允许文件同名、</u></strong><strong><u>允许文件共享</u>。</strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><u>注意：</u></span><span style="color:#E53333;"><u>文件目录也作为一个文件来处理，称为目录文件。</u></span><span style="line-height:1.5;">由于文件系统中一般有很多文件，文件目录也很大，因此文件目录并不放在主存中，而是放在外存中。</span> 
+</p>
+<strong><span style="color:#333333;font-size:18px;">2．文件控制块和索引节点</span></strong><br />
+<p>
+	<strong>a. 文件控制块：</strong><span style="line-height:1.5;">文件控制块主要由</span><strong><u>文件名、</u></strong><strong><u>文件的结构、</u></strong><strong><u>文件的物理位置、</u></strong><strong><u>存取控制信息、</u></strong><strong><u>管理信息</u></strong><span style="line-height:1.5;">等组成。</span> 
+</p>
+<strong>b. 索引节点：</strong><span style="line-height:1.5;">有些系统采用了文件名与文件描述信息分开的方法，<u><strong>将</strong></u></span><u><strong>文件描述信息单独形成一个索引节点，简称为i节点</strong></u><span style="line-height:1.5;">。</span> 
+<p>
+	每个文件都有唯一的磁盘索引节点，主要包括以下内容：<strong><u>文件主标识符、</u></strong><strong><u>文件类型、</u></strong><strong><u>文件存取权限、</u></strong><strong><u>文件物理地址、</u></strong><strong><u>文件长度、</u></strong><strong><u>文件链接计数、</u></strong><strong><u>文件存取时间</u>。</strong> 
+</p>
+<p>
+	当文件被打开时，磁盘索引节点被复制到内存的索引节点中，以便使用。存放在内存中的索引节点称为内存索引节点，其增加了以下内容：<strong><u>索引节点编号、</u></strong><strong><u>状态、</u></strong><strong><u>访问计数、</u></strong><strong><u>逻辑设备号、</u></strong><strong><u>链接指针</u>。</strong> 
+</p>
+<strong><span style="color:#333333;font-size:18px;">3．单级目录结构</span></strong><br />
+<p>
+	a. 基本概念：单级目录结构（或称为一级目录结构）是最简单的目录结构。在整个文件系统中，<strong><u>单级目录结构只建立一张目录表，每个文件占据其中的一个表目</u>。</strong> 
+</p>
+<p>
+	b. 优点：易于实现，管理简单。
+</p>
+<p>
+	c. 缺点：<span style="line-height:1.5;">不允许文件重名、</span><span style="line-height:1.5;">文件查找速度慢。</span> 
+</p>
+<strong><span style="color:#333333;font-size:18px;">4．二级目录结构</span></strong><br />
+a. 基本概念：<strong><u>二级目录结构将文件目录分成主文件目录和用户文件目录</u>。</strong>系统为每个用户建立一个单独的用户文件目录，其中的表项登记了该用户建立的所有文件及其说明信息。主文件目录则记录系统中各个用户文件目录的情况，每个用户占一个表目，表目中包括用户名及相应用户目录所在的存储位置等。这样就形成了二级目录结构。<br />
+<p>
+	b. 优点：<u>解决文件重名问题</u>，并可以<u>获得较高的查找速度</u>。
+</p>
+<p>
+	c. 缺点：二级目录结构<u>缺乏灵活性</u>，特别是当用户需要在某些任务上进行合作和访问其他文件时会产生很多问题。
+</p>
+<strong><span style="color:#333333;font-size:18px;">5．树形目录结构</span></strong><br />
+<p>
+	a . 基本概念：为了便于系统和用户更灵活、方便地组织管理和使用各类文件，<strong><u>将二级目录的层次关系加以推广，便形成了多级目录结构</u></strong>，又称为树形目录结构。<span style="line-height:1.5;">树形目录结构中引入了以下概念：</span><strong><u>路径名、</u></strong><strong><u>当前目录。</u></strong> 
+</p>
+<p>
+	b. 优点：<u>方便对文件进行分类</u>，<u>层次结构清晰</u>，也能够<u>更有效地进行文件的管理和保护</u>。
+</p>
+<p>
+	c. 缺点：在树形目录中查找一个文件，需要按照路径名逐级访问中间节点，<u>增加了磁盘访问次数</u>，进而影响了查询速度。
+</p>
+<strong><span style="color:#333333;font-size:18px;">6．图形目录结构</span></strong><br />
+<p>
+	a. 基本概念：树形目录结构便于实现文件分类，但是不便于实现文件共享，<strong><u>为此</u></strong><strong><u>在树形目录结构的基础上增加了一些指向同一节点的有向边，使整个目录成为一个有向无环图</u></strong>。这就是图形目录结构，<u><strong><span style="color:#E53333;">引入这种结构的目的是实现文件共享。</span></strong></u> 
+</p>
+<p>
+	b. 优点：<u>方便实现文件的共享</u>。
+</p>
+<p>
+	c. 缺点：系统的<u>管理变得复杂</u>。
+</p>

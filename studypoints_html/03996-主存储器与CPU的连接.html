@@ -1,0 +1,38 @@
+<p>
+	要掌握主存储器与CPU的连接之前，首先需要了解一个考研必考的知识点，即<strong><span style="color:#E53333;">存储器容量的扩充。</span></strong><span style="line-height:1.5;">一般存储器容量的扩充通常有3类：</span><strong>位扩充、字扩充和字位扩充</strong><span style="line-height:1.5;">。</span> 
+</p>
+<p class="p0">
+	<strong>1. 位扩充（增加<span style="line-height:1.5;">a</span><img src="texmath/ff0c81times" alt="" width="9" height="8" /><span style="line-height:1.5;">b</span>后面的b）</strong> 
+</p>
+<p class="p0">
+	位扩充指增加存储字长，例如，现要将1K<strong><img src="texmath/ff0c81times" alt="" width="9" height="8" /></strong>4位的芯片组成1K<strong><img src="texmath/ff0c81times" alt="" width="9" height="8" /></strong>8位的存储器。
+</p>
+<p class="p0">
+	<strong>2. 字扩充（增加<span style="line-height:1.5;">a</span><img src="texmath/ff0c81times" alt="" width="9" height="8" /><span style="line-height:1.5;">b</span>前面的a）</strong> 
+</p>
+<p class="p0">
+	字扩充是增加存储单元的个数，例如，现要将1K<strong><img src="texmath/ff0c81times" alt="" width="9" height="8" /></strong>8位的芯片组成2K<strong><img src="texmath/ff0c81times" alt="" width="9" height="8" /></strong>8位的存储器。
+</p>
+<p class="p0">
+	<strong>3. 字位扩充（增加<span style="line-height:1.5;">a</span><img src="texmath/ff0c81times" alt="" width="9" height="8" /><span style="line-height:1.5;">b</span>中的a和b）</strong> 
+</p>
+<p class="p0">
+	字位扩充既增加了存储单元的个数，又增加了存储字长，例如，要用1K<strong><img src="texmath/ff0c81times" alt="" width="9" height="8" /></strong>4位的芯片组成4K<strong><img src="texmath/ff0c81times" alt="" width="9" height="8" /></strong>8位的存储器。
+</p>
+<p class="p0">
+	<span style="color:#000000;"><strong><u>注意：在进行字位扩充时，一定是先进行位扩充，再进行字扩充。</u></strong></span> 
+</p>
+<p class="p0">
+	<span style="color:#000000;"><strong><u> </u></strong></span> 
+</p>
+<p class="p0">
+	<strong><u> <span style="color:#E53333;"><strong>另外，记住下面这个芯片数量计算公式：</strong></span> </u></strong> 
+</p>
+<strong><u> 
+<p class="p0">
+	<span style="line-height:1.5;">如果要求将容量为a</span><img src="texmath/ff0c81times" alt="" width="9" height="8" /><span style="line-height:1.5;">b的芯片组成容量为c</span><img src="texmath/ff0c81times" alt="" width="9" height="8" /><span style="line-height:1.5;">d的芯片，假设需要芯片的数量为n，则n=(c*d)/(a*b)（该公式就是整个存储器的容量除以单个芯片的容量）</span>。
+</p>
+<p class="p0">
+	以上掌握之后，只需要根据需要组成的芯片计算地址线和数据线的数量，再使用译码器（根据芯片的数量来选择，一般有2-4译码器和3-8译码器）连接起来即可。
+</p>
+</u></strong>

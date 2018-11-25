@@ -1,0 +1,51 @@
+<p>
+	ICMP报文分为两种，<strong>即<u>ICMP差错报告报文和ICMP询问报文。</u></strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">1. ICMP差错报告报文的分类</span></strong> 
+</p>
+<p>
+	a. 终点不可达：<strong><u>当路由器或主机不能交付数据报时发</u></strong>；
+</p>
+<p>
+	b. 源站抑制：<strong><u>当路由器或主机由于拥塞而丢弃数据报时发</u></strong>；
+</p>
+<p>
+	c. 时间超过：<strong><u>当IP分组的TTL值被减为0后发</u></strong>；
+</p>
+<p>
+	d. 参数问题：<strong><u>当路由器或目的主机收到的数据报的首部中有字段的值不正确时发</u></strong>；
+</p>
+<p>
+	e. 改变路由（重定向）：<strong><u>有更好路由的时候发</u></strong>。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">2. ICMP询问报文的分类</span></strong> 
+</p>
+<p>
+	1. 有回送请求和回答报文；
+</p>
+<p>
+	2. 时间戳请求和回答报文；
+</p>
+<p>
+	3. 掩码地址请求和回答报文；
+</p>
+<p>
+	4. 路由器询问和通告报文。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">3. 不应发送ICMP差错报告报文的几种情况</span></strong> 
+</p>
+<p>
+	1. 对<strong><u>ICMP差错报告报文</u></strong>不再发送ICMP差错报告报文；
+</p>
+<p>
+	2. 对<strong><u>第一个分片的数据报片的所有后续数据报片</u></strong>都不发送ICMP差错报告报文；
+</p>
+<p>
+	3. 对<strong><u>具有组播地址的数据报</u></strong>都不发送ICMP差错报告报文；
+</p>
+<p>
+	4. 对<strong><u>具有特殊地址</u></strong>（如127.0.0.0或0.0.0.0）的数据报不发送ICMP差错报告报文。
+</p>

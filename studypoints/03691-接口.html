@@ -1,0 +1,17 @@
+接口又被称为服务访问点，从物理层开始，每一层都向上层提供服务访问点，即没有接口就不能提供服务。<br />
+<p>
+	<span style="color:#E53333;"><strong>五个不得不知的专业术语：</strong></span> 
+</p>
+<p>
+	1.&nbsp;<strong>服务数据单元（SDU）</strong> &nbsp;第n层的服务数据单元，记作n-SDU。
+</p>
+<p>
+	2.&nbsp;<strong>协议控制信息（PCI）</strong> &nbsp; 第n层的协议控制信息，记作n-PCI。
+</p>
+<p>
+	3.&nbsp;<strong>接口控制信息（ICI）</strong> &nbsp; 第n层的接口控制信息，记作n-ICI。
+</p>
+<p>
+	4.&nbsp;<strong>协议数据单元（PDU）</strong> &nbsp;第n层的服务数据单元（SDU）+ 第n层的协议控制信息（PCI）= 第n层的协议数据单元，即n-SDU+n-PCI=n-PDU，表示的是同等层对等实体间传送的数据单元。另外，n-PDU=(n-1)-SDU。这个公式看完，后面的内容就会很清楚。例如，网络层的整个IP分组交到数据链路层，整个IP分组成为数据链路层的数据部分。
+</p>
+5.&nbsp;<strong>接口数据单元（IDU）</strong> &nbsp;第n层的服务数据单元（SDU）+ 第n层的接口控制信息（ICI）= 第n层的接口数据单元，即n-SDU+n-ICI=n-IDU，表示的是在相邻层接口间传送的数据单元。<br />

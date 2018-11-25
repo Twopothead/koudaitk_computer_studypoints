@@ -1,0 +1,15 @@
+<p style="font-size:16px;">
+	队列应用的例子，其实就是需要“排队”的情形，<span style="line-height:1.5;">举例如下。</span> 
+</p>
+<p style="font-size:16px;">
+	<strong><span style="font-size:18px;">1. CPU资源的竞争问题</span></strong> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">在具有多个终端的计算机系统中，有多个用户需要使用CPU各自运行自己的程</span><span style="line-height:1.5;">序，它们分别通过各自终端向操作系统提出使用CPU的请求，操作系统按照每个</span><span style="line-height:1.5;">请求在时间上的先后顺序，将其排成一个队列，<strong><span style="color:#E53333;"><u>每次把CPU分配给队头用户使</u></span></strong></span><span style="line-height:1.5;color:#E53333;"><strong><u>用，当相应的程序运行结束，则令其出队，再把CPU分配给新的队头用户，直到</u></strong></span><span style="line-height:1.5;"><strong><span style="color:#E53333;"><u>所有用户任务处理完毕</u></span></strong><span style="color:#E53333;"><u>。</u></span></span> 
+</p>
+<p style="font-size:16px;">
+	<strong><span style="font-size:18px;">2. 主机与外部设备之间速度不匹配的问题</span></strong> 
+</p>
+<p style="font-size:16px;">
+	以主机和打印机为例来说明（<strong><span style="color:#E53333;">09年真题已经考查</span></strong>），主机输出数据给打印机打<span style="line-height:1.5;">印，主机输出数据的速度</span><span style="line-height:1.5;">比打印机打印的速度要快得多，若直接把输出的数据送</span><span style="line-height:1.5;">给打印机打印，由于速度</span><span style="line-height:1.5;">不匹配，显然是不行的。所以解决的方法是设置一个打</span><span style="line-height:1.5;">印数据缓冲区，主机把要</span><span style="line-height:1.5;">打印输出的数据依次写入到这个缓冲区中，写满后就暂</span><span style="line-height:1.5;">停输出，继而去做其他的</span><span style="line-height:1.5;">事情，打印机就从缓冲区中按照先进先出的原则依次取</span><span style="line-height:1.5;">出数据并打印，打印完后</span><span style="line-height:1.5;">再向主机发出请求，主机接到请求后再向缓冲区写入打</span><span style="line-height:1.5;">印数据，这样利用队列既</span><span style="line-height:1.5;">保证了打印数据的正确，又使主机提高了效率。</span> 
+</p>

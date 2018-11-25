@@ -1,0 +1,57 @@
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">1. PPP协议的组成</span></strong> 
+</p>
+<p>
+	<b>a.&nbsp;</b>一个将IP数据报封装到串行链路的方法；
+</p>
+<p>
+	<b>b.&nbsp;</b>一个链路控制协议（LCP），用于建立、配置和测试数据链路连接，并在不需要时将它们释放；
+</p>
+<p>
+	<b>c.&nbsp;</b>一套网络控制协议（NCP），其中每个协议支持不同的网络层协议，用来建立和配置不同的网络层协议。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">2．PPP协议的帧格式</span></strong> 
+</p>
+<p>
+	PPP协议的帧格式如下图所示。
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/1E644CC65BB369A7E3A5DEDC1FCDD97C.png" width="300" height="86" alt="" title="" align="" /> 
+</p>
+<p>
+	<strong>1）标志字段（F）。</strong>首部和尾部各占1个字节，规定为Ox7E。
+</p>
+<p>
+	<strong>2）地址字段（A）。</strong>占1个字节。规定为OxFF，没有为什么。
+</p>
+<p>
+	<strong>3）控制字段（C）。</strong>占1个字节。规定为Ox03，没有为什么。
+</p>
+<p>
+	<strong>4）协议字段。</strong>占2个字节。例如，当协议字段为 0x0021时，PPP帧的信息字段就是IP 数据报；若为0xC021，则信息字段是PPP链路控制数据；若为0x8021，则表示这是网络控制数据。
+</p>
+<p>
+	<strong>5）信息部分。</strong>占0～1500个字节。为什么不是46～1500个字节？因为PPP是点对点的，并不是总线型，所以无需采用CSMA/CD协议，自然就没有最短帧。另外，当数据部分出现和标志位一样的比特组合时，就需要采用一些措施来实现透明传输（上面的补充知识点已讲）。
+</p>
+<p>
+	<strong>6）帧检验序列（FCS）。</strong>占2个字节，即循环冗余码检验中的冗余码。检验区间包括地址字段、控制字段、协议字段和信息字段。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">3．PPP的工作状态</span></strong> 
+</p>
+<p>
+	<span style="color:#333333;">当用户拨号接入ISP时，路由器的调制解调器对拨号做出确认，<span style="color:#E53333;"><strong><u>并建立一条物理连接</u></strong></span>。这时，个人计算机向路由器发送一系列的LCP分组（封装成多个PPP帧）。这些分组及其响应选择了将要使用的一些PPP参数。接着就进行网络层配置，网络控制协议（NCP）给新接入的个人计算机分配一个临时的IP地址。这样，个人计算机就成为因特网上的一个主机了。</span> 
+</p>
+<p>
+	<span style="color:#333333;"> 当用户通信完毕时，NCP释放网络层连接，收回原来分配出去的IP地址。接着，LCP释放数据链路层连接，最后释放物理层连接。</span> 
+</p>
+<p>
+	<span><b><span style="font-size:18px;color:#E53333;">4. 总结</span></b></span> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#000000;"><b>a.&nbsp;</b>PPP是一个<strong><u>面向字节的协议</u></strong>。</span></span> 
+</p>
+<p>
+	<span style="color:#000000;"><b>b.&nbsp;</b>PPP不需要的功能：纠错（PPP只负责检错）、流量控制（由TCP负责）、序号（PPP是不可靠传输协议，所以不需要对帧进行编号）、多点线路（PPP是点对点的通信方式）、半双工或单工（PPP只支持全双工链路）。</span> 
+</p>

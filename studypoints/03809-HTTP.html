@@ -1,0 +1,21 @@
+<p>
+	<strong><span style="font-size:18px;">1．HTTP的操作过程</span></strong> 
+</p>
+<p>
+	超文本传送协议（HTTP）是在客户程序（如浏览器）与WWW服务器程序之间进行交互所使用的协议。HTTP是面向事务的应用层协议，它<span style="color:#E53333;"><strong><u>使用TCP连接进行可靠传输</u></strong></span>，<strong><u>服务器默认监听在80端</u></strong><strong><u>口</u></strong>。
+</p>
+<p>
+	从协议执行的过程来说，当浏览器要访问WWW服务器时，首先要完成对WWW服务器的域名解析。一旦获得了服务器的IP地址，浏览器将通过TCP向服务器发送连接建立请求。每个服务器上都有一个服务进程，它<strong>不断地监听TCP的端口80，</strong>当监听到连接请求后便与浏览器建立连接。<strong>TCP连接建立后，</strong>浏览器就向服务器发送要求获取某一Web页面的HTTP请求。<strong>服务器收到HTTP请求后，</strong>将构建所请求的Web页的必需信息，并通过HTTP响应返回给浏览器。浏览器再将信息进行解释，然后将Web页显示给用户。最后，TCP连接释放。
+</p>
+<p>
+	<span style="color:#333333;font-size:18px;"><strong>2.</strong></span><span style="color:#333333;font-size:18px;"><strong>HTTP的工作方式</strong></span> 
+</p>
+<p>
+	HTTP既可以使用非持久连接，也可以使用持久连接。
+</p>
+<p>
+	<strong><span style="color:#E53333;">非持久连接：</span></strong>每一个网页元素对象的传输都需要单独建立一个TCP连接（“三次握手”建立）。换句话说，每请求一个万维网文档所需的时间是该文档的传输时间加上两倍往返时间RTT（一个RTT用于TCP连接，另一个RTT用于请求和接收文档）。
+</p>
+<p>
+	<strong><span style="color:#E53333;">持久连接：</span></strong>万维网服务器在发送响应后仍然保持这条连接，同一个客户和服务器可以继续在这条连接上传送后续的HTTP请求和响应报文。<strong>持久连接又分为非流水线（2011年已经出题）和流水线两种方式。</strong>对于非流水线方式，客户只能在接收到前一个请求的响应后才能发送新的请求。而流水线方式是HTTP客户每遇到一个对象引用就立即发出一个请求，因而HTTP客户可以一个接一个连续地发出各个引用对象的请求。如果所有的请求和响应都是连续发送的，那么所有引用到的对象共经历一个RTT延迟，而不是像非流水线那样，每个引用都必须有一个RTT延迟。
+</p>

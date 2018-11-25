@@ -1,0 +1,50 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．内存管理的功能</span></strong> 
+</p>
+<p>
+	<strong>a.&nbsp;</strong><span style="line-height:1.5;">内存的分配和回收；</span> 
+</p>
+<p>
+	<strong>b.</strong> 地址变换；
+</p>
+<p>
+	<strong>c. </strong>扩充内存；
+</p>
+<p>
+	<strong>d.</strong> 存储保护。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．应用程序的编译、链接与装入</span></strong> 
+</p>
+<p>
+	<strong>a. </strong><span style="line-height:1.5;">从源程序到执行的进程，经历了编译、链接、装入3个步骤；</span> 
+</p>
+<p>
+	<strong>b. </strong>地址转换将逻辑地址转换为物理地址，这个过程叫做<strong><u>重定位</u></strong>。不同地址的变换过程如下图所示。
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/0862581A20AADD62F49C0B16737DE24C.png" alt="" title="" height="48" width="300" align="" /> 
+</p>
+<p>
+	<strong>c. </strong>程序的链接有3种方式：静态链接、运行时动态链接、装入时动态链接；<br />
+<strong>d.&nbsp;</strong>程序的装入也有3种方式：绝对装入、可重定位装入、动态运行装入。
+</p>
+<p>
+	<span style="color:#333333;font-size:18px;"><strong>3. 物理地址和逻辑地址</strong></span> 
+</p>
+<p>
+	<strong>a. </strong><span style="line-height:1.5;">逻辑地址是指由程序产生的与段（与页无关，因为只有段对用户可见）相关的偏移地址部分。</span> 
+</p>
+<p>
+	<strong>b. </strong>物理地址是指出现在CPU外部地址总线上的寻址物理内存的地址信号，是逻辑地址变换后的最终结果地址，物理地址空间是指内存中物理地址单元的集合。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">4．内存保护</span></strong> 
+</p>
+<p>
+	内存保护是为了防止一个作业有意或无意地破坏操作系统或其他作业。常用的存储保护方法有界限寄存器方法和存储保护键方法。<br />
+<strong>a. 界限寄存器方法：</strong>有两种，分别是<u>上、下界寄存器方法</u>和<u>基址和限长寄存器方法</u>。上、下界寄存器方法<strong><u><span style="color:#E53333;">采用上、下界寄存器分别存放作业的结束地址和开始地址</span></u></strong>。在作业运行过程中，将每一个访问内存的地址都同这两个寄存器内容进行比较，如超出范围便产生保护性中断；<span style="line-height:1.5;">基址和限长寄存器方法</span><span style="line-height:1.5;color:#E53333;"><strong><u>采用基</u></strong></span><span style="line-height:1.5;"><strong><u><span style="color:#E53333;">址和限长寄存器分别存放作业的起始地址及作业的地址空间长度</span></u></strong>。当作业执行时，将每一个访问内存的相对地址和现场寄存器比较，如果超过了限长寄存器的值，则发出越界中断信号，并停止作业的运行。</span> 
+</p>
+<p>
+	<strong>b. 存储保护键方法：</strong>存储保护键方法是<strong><u>给每个存储块分配一个单独的保护键</u></strong>，它相当于一把“锁”。此外，<strong><u>进入系统的每个作业也被赋予一个保护键</u></strong>，它相当于一把“钥匙”。当作业运行时，检查“钥匙”和“锁”是否匹配，如果二者不匹配，则系统发出保护性中断信号，停止作业运行。
+</p>

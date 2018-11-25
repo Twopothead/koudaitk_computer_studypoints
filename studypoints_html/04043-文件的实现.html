@@ -1,0 +1,70 @@
+<p>
+	<span style="color:#E53333;font-size:18px;"><span style="font-size:18px;color:#E53333;"><strong>1. 文件的实现</strong></span></span> 
+</p>
+<p>
+	<span style="color:#333333;font-size:18px;"><span style="font-size:14px;">a. 基本概念：文件的实现<strong><u>主要是指文件在存储器上的实现，即文件物理结构的实现，包括外存分配方式与文件存储空间的管理</u></strong>。</span><span style="font-size:14px;"></span><span style="font-size:14px;"></span></span> 
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;">2．外存分配方式（连续分配）</span></strong> 
+</p>
+<p>
+	<strong>a. 基本概念：</strong><span style="line-height:1.5;">把逻辑文件中的记录顺序地存储到相邻的物理盘块中，这样所形成的文件结构称为顺序文件结构，此时的物理文件称为顺序文件。</span> 
+</p>
+<p>
+	<strong>b. 优点：</strong><u>查找速度比其他方法快</u>（只需要起始块号和文件大小），目录中关于文件物理存储位置的<u>信息也比较简单</u>。
+</p>
+<p>
+	<strong>c. 缺点：</strong><u>容易产生碎片</u>，需要定期进行存储空间的紧缩。<span style="line-height:1.5;">这种分配方法不适合文件随时间动态增长和减少的情况，也不适合用户事先不知道文件大小的情况。</span> 
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;"><span style="color:#E53333;">3</span><strong><span style="color:#E53333;font-size:18px;">．外存分配方式（链接分配）</span></strong></span></strong> 
+</p>
+<p>
+	<strong>a. 隐式链接：</strong><span style="line-height:1.5;">用于链接物理块的指针隐式地放在每个物理块中。</span> 
+</p>
+<strong>b. 显式链接：</strong>用于链接物理块的指针显式存放在内存的一张链接表中。<br />
+<p>
+	<strong>c. 优点：</strong>简单（只需起始位置），文件创建与增长容易实现。
+</p>
+<p>
+	<strong>d. 缺点：</strong>不能随机访问盘块，链接指针会占用一些存储空间，而且存在可靠性问题。
+</p>
+<p>
+	<strong><strong><span style="color:#E53333;font-size:18px;"><strong>4．外存分配方式（索引分配）</strong></span></strong></strong> 
+</p>
+<p>
+	<b>a. 基本概念：</b>系统为每个文件分配一个索引块，索引块中存放索引表，索引表中的每个表项对应分配给该文件的一个物理块。
+</p>
+<p>
+	<strong>b. 单级索引分配：</strong>单级索引分配方法就是将每个文件所对应的盘块号集中放在一起，为每个文件分配一个索引块（表），再把分配给该文件的所有盘块号都记录在该索引块中，因而该索引块就是一个包含多个盘块号的数组。
+</p>
+<p>
+	<strong>c. 两级索引分配：</strong>当文件较大，一个索引块放不下文件的块序列时，可以对索引块再建立索引，这样构成二级索引。
+</p>
+<p>
+	<strong>d. 混合索引分配：</strong><span style="line-height:1.5;">所谓混合索引分配，是指将多种索引分配方式相结合而形成的一种分配方式。</span> 
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;"><span style="color:#E53333;">5．文件存储空间管理（</span><b><span style="color:#E53333;">空闲文件表</span></b><span style="color:#E53333;">）</span></span></strong> 
+</p>
+<p>
+	<strong>a. 基本概念：</strong><span style="line-height:1.5;">为所有空闲文件单独建立一个目录，每个空闲文件在这个目录中占一个表目。表目的内容包括第一个空闲块号、物理块号和空闲块数目。</span> 
+</p>
+<p>
+	<strong>b. 优点：</strong><span style="line-height:1.5;">当文件存储空间中只有少量空闲文件时，这种方法有较好的效果。</span> 
+</p>
+<p>
+	<strong>c. 缺点：</strong>如果存储空间中有大量的小空闲文件，则空闲文件目录将变得很大，其效率将大为降低。这种管理技术仅适用于连续文件。
+</p>
+<p>
+	<strong><strong><span style="color:#333333;font-size:18px;"><span style="color:#E53333;">6．文件存储空间管理（</span><b><span style="color:#E53333;">空闲块链表</span></b><span style="color:#E53333;">）</span></span></strong></strong> 
+</p>
+<p>
+	<b>a. 基本概念：</b><u>将文件存储设备上的所有空闲块链接在一起，形成一条空闲块链</u>，并设置一个头指针指向空闲块链的第一个物理块。也可以将链表中的空闲盘块改为空闲盘区（每个空闲盘区包含若干个连续的空闲盘块），这样的链称为空闲盘区链。
+</p>
+<p>
+	<strong><strong><span style="color:#E53333;font-size:18px;">7．文件存储空间管理（位示图法）</span></strong></strong> 
+</p>
+<p>
+	<b>a. 基本概念：</b>为文件存储器<strong><u>建立一张位示图（称它是图，其实就是一连串的二进制位）</u></strong>，以反映整个存储空间的分配情况。在位示图中，每一个二进制位都对应一个物理块，若某位为1，表示对应的物理块已分配；若为0，表示对应的物理块空闲。
+</p>

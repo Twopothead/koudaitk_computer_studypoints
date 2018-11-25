@@ -1,0 +1,15 @@
+<p>
+	CPU每取出并执行一条指令所需的全部时间，即CPU完成一条指令的时间，称为<strong>指令周期</strong>。
+</p>
+<p>
+	指令周期被划分为几个不同的阶段，<strong>每个阶段所需的时间称为机器周期，</strong>又称为CPU工作周期或基本周期，<span style="color:#E53333;"><strong>通常等于取指时间（或访存时间）。</strong></span>时钟周期是时钟频率的倒数，也可称为节拍脉冲或T周期，是处理操作最基本的单位。一个指令周期由若干个机器周期组成，每个机器周期又由若干个时钟周期组成，如下图所示。
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/84CCBE908CB7911028A70F4E2C3D9F3F.png" width="333" height="103" alt="" title="" align="" /> 
+</p>
+<p>
+	当CPU采用中断方式实现主存与I/O交换信息时，CPU在每条指令的执行周期结束前，都要发出<strong>中断查询信号</strong>，以检测是否有I/O提出请求。如果有请求，则CPU要进入<strong>中断响应阶段</strong>，又称为<strong>中断周期</strong>。这样，一个完整的指令周期应包括取指、间址、执行和中断4个子周期，如图5-7所示。<span style="color:#E53333;"><strong>完整的指令周期流程</strong></span>如图5-8所示。
+</p>
+<p>
+	<img src="http://yuntiexamitempig.oss-cn-qingdao.aliyuncs.com/8086B5405CC83F4089C19FEBE6E5537B.png" width="345" height="132" alt="" title="" align="" /> 
+</p>

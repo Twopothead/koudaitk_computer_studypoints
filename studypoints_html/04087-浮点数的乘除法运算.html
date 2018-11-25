@@ -1,0 +1,58 @@
+<p>
+	<strong><span style="color:#E53333;font-size:24px;">1. 浮点数乘除法的运算规则</span></strong> 
+</p>
+<p>
+	<strong>运算规则：</strong>两个浮点数相乘，乘积的阶码应为相乘两数的阶码之和，乘积的尾数应为相乘两数的尾数之积。两个浮点数相除，商的阶码为被除数的阶码减去除数的阶码，尾数为被除数的尾数除以除数的尾数所得的商，下面可以用数学公式来描述。
+</p>
+<p>
+	假设有两个浮点数x和y：
+</p>
+<p>
+	<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=19580c&x=Sx*r^{jx}" alt="" width="89" height="15" /> 
+</p>
+<p>
+	<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=85f579&y=Sy*r^{jy}" alt="" width="88" height="18" /> 
+</p>
+那么有，<br />
+<p>
+	<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=38bd8a&x*y=(Sx*Sy)*r^{jx+jy}" alt="" width="186" height="19" />（1）
+</p>
+<p>
+	<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=5f267f&\frac{x}{y}=\frac{Sx}{Sy}*r^{jx-jy}" alt="" width="119" height="37" />（2）
+</p>
+<p>
+	从式1和式2可以看出，<strong>浮点数乘除运算不存在两个数的对阶问题，故比浮点数的加减法还要简单。</strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:24px;">2. 浮点数乘除法的运算步骤</span></strong> 
+</p>
+<p>
+	<strong>第一步：0操作数检查。</strong> 
+</p>
+对于乘法：检测两个尾数中是否一个为0，若有一个为0，则乘积必为0，不再作其他操作；若两尾数均不为0，则可进行乘法运算。<br />
+<p>
+	对于除法：若被除数x为0，则商为0；若除数y为0，则商为 ，另作处理。若两尾数均不为0，则可进行除法运算。
+</p>
+<strong>第二步：阶码加减操作。</strong><br />
+<p>
+	在浮点乘除法中，对阶码的运算只有4种，即+1、-1、两阶码求和以及两阶码求差。当然，在运算的过程中，还要检查是否有溢出，因为两个同号的阶码相加或异号的阶码相减可能产生溢出。
+</p>
+<strong>第三步：尾数乘/除操作。</strong><br />
+<p>
+	对于乘法：第2章讲解了非常多的定点小数乘法算法，两个浮点数的尾数相乘可以随意选取一种定点小数乘法运算来完成。
+</p>
+<strong>第四步：结果规格化及舍入处理。</strong><br />
+可以直接采用浮点数加减法的规格化和舍入处理方式。主要有以下两种：<br />
+<p>
+	<strong>1）第一种：无条件地丢掉正常尾数最低位之后的全部数值。</strong>这种办法被称为截断处理，其好处是处理简单，缺点是影响结果的精度。 &nbsp;
+</p>
+<p>
+	<strong>2）第二种：运算过程中保留右移中移出的若干高位的值，最后再按某种规则用这些位上的值进行修正尾数。</strong>这种处理方法被称为舍入处理。
+</p>
+<p>
+	<span style="line-height:1.5;"><strong>当尾数用补码表示时</strong></span><span style="line-height:1.5;"><strong>具体规则是：</strong></span> 
+</p>
+1）当丢失的各位均为0时，不必舍入。<br />
+2）当丢失的各位数中的最高位为0，且以下各位不全为0时，或者丢失的最高位为1，以下各位均为0时，舍去丢失位上的值。<br />
+3）当丢失的最高位为1，以下各位不全为0时，执行在尾数最低位加1的修正操作。<br />
+4）舍入处理。<br />

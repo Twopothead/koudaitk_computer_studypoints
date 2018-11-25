@@ -1,0 +1,39 @@
+<p>
+	<strong><span style="font-size:18px;">1. MAC地址</span></strong> 
+</p>
+<p>
+	<span style="color:#E53333;"><span style="color:#333333;">局域网中的每台计算机都有一个唯一的号码，</span></span><strong><span style="color:#E53333;"><u>称为</u></span><span style="color:#E53333;"><u>MAC地址或物理地址、硬件地址。</u></span></strong> 
+</p>
+<p>
+	每块网卡出厂即被赋予一个全球唯一的MAC地址，它被固化在网卡的ROM中，<span style="color:#E53333;"><strong><u>共48bit（6B）</u></strong></span>，例如，01-3e-01-23-4e-3c十六进制表示，01其实是0000 0001。<u>高24bit为厂商代码，低24bit为厂商自行分配的网卡序列号</u>。
+</p>
+<p>
+	由于总线上使用的是广播通信，因此网卡从网络上每收到一个MAC帧，先要用硬件检查MAC帧中的MAC地址。<span style="color:#E53333;"><u><strong>如果是发往本站的帧就收下，否则丢弃</strong></u></span>。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2. MAC帧的格式</span></strong> 
+</p>
+<p>
+	<img src="png-jpeg-pics/651DF8353E949C3F9F8C6D9FE2187538.png" width="330" height="143" alt="" title="" align="" /> 
+</p>
+<p>
+	<strong>1. 前导码。</strong>在帧的前面插入8B，使接收端与发送端进行时钟同步。这8B又可分为前同步码（7B）和帧开始定界符（1B）两部分。
+</p>
+<p>
+	<strong>2. 目的地址、源地址。</strong>均使用48bit（6B）的MAC地址。
+</p>
+<p>
+	<span style="color:#000000;"><strong>3. 类型。</strong>占2B。指出数据域中携带的数据应交给哪个协议实体处理。</span> 
+</p>
+<p>
+	<span style="color:#000000;"><strong>4. 数据。</strong>占46～1500B。46和1500是怎么来的？首先，由CSMA/CD算法可知，以太网帧的最短帧长为64B，而MAC帧的首部和尾部的长度为18B，所以数据最短为64B-18B= 46B。其次，最大的1500B是规定的，没有为什么。</span> 
+</p>
+<p>
+	<span style="color:#000000;"><strong>5. 填充。</strong>前面讲过，由于CSMA/CD算法的限制，最短帧长为64B，因此除去首部18B，如果数据长度小于46B，那么就得填充，使得帧长不小于64B。当数据字段长度小于46B时，需要填充至46B；当数据字段长度大于或等于46B时，则无需填充。因此，填充数据长度的范围为0～46B。</span> 
+</p>
+<p>
+	<span style="color:#000000;"><strong>6. 校验码（FCS）。</strong>占4B。采用循环冗余码，不但需要校验MAC帧的数据部分，还要校验目的地址、源地址和类型字段，<strong>但是不校验前导码。</strong></span> 
+</p>
+<p>
+	<span style="color:#000000;"></span> 
+</p>

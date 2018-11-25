@@ -1,0 +1,60 @@
+<strong><span style="color:#333333;font-size:18px;">1. 非规格化浮点数表示范围</span></strong><br />
+<p>
+	<strong><span style="color:#E53333;">1）最大正数：</span></strong><img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=168fd8&2^{(2^{m}-1)}*(1-2^{-n})" alt="" width="138" height="20" /><strong>。</strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;">2）最小正数：</span></strong><img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=026d30&2^{-(2^{m}-1)}*2^{-n}" alt="" width="106" height="16" /><strong>。</strong> 
+</p>
+<strong><span style="color:#E53333;">3）最大负数：</span></strong><img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=28a5c2&-2^{-(2^{m}-1)}*2^{-n}" alt="" width="118" height="16" /><br />
+&nbsp;<br />
+<strong><span style="color:#E53333;">4）最小负数：</span></strong><img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=4b7b70&-2^{(2^{m}-1)}*(1-2^{-n})" alt="" width="149" height="20" /><br />
+<p>
+	<strong><span style="color:#E53333;font-size:18px;"><strong><span style="color:#333333;font-size:18px;">2. 规格化浮点数表示范围</span></strong></span></strong> 
+</p>
+<p>
+	<strong>规格化的尾数必须满足如下条件：</strong> 
+</p>
+<p>
+	假设尾数为W，且基数为2，则当1＞|w|≥1/2时，此浮点数为规格化数。
+</p>
+<p>
+	浮点数的尾数常用原码和补码来表示，要分两种情况来分析。
+</p>
+<p>
+	<strong>情况一：</strong>当使用原码表示尾数时，要使得1＞|w|≥1/2，其尾数第一位必须为1，否则其绝对值一定小于1/2，故原码表示尾数规格化后的形式为0.1XXX X或者1.1XXX X。
+</p>
+<p>
+	<strong>情况二：</strong>当使用补码表示尾数时，要使得1＞|w|≥1/2，当此浮点数为正数时，和原码一样，最高位必须为1；当此浮点数为负数时，要使得1＞|w|≥1/2，最高位必须为0，否则求反加1回到原码时就会造成|w|＜1/2，故补码表示尾数规格化后的形式为0.1XXX X或者1.0XXX X。&nbsp;
+</p>
+<p>
+	<span style="line-height:1.5;">现仍假设浮点数阶码的数值位取m位，尾数的数值位取n位，当浮点数为规格化时，求该规格化浮点数表示的最大正数、最小正数、最大负数和最小负数。</span> 
+</p>
+<p>
+	<strong><span style="color:#E53333;">1）最大正数：</span></strong><img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=168fd8&2^{(2^{m}-1)}*(1-2^{-n})" alt="" width="138" height="20" />。
+</p>
+<p>
+	<strong><span style="color:#E53333;">2）最小正数：</span></strong><img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=f17054&2^{-(2^{m}-1)}*2^{-1}" alt="" width="104" height="16" /> 。
+</p>
+<p>
+	<strong><span style="color:#E53333;">3）最大负数：</span></strong><img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=f1af91&-2^{-(2^{m}-1)}*2^{-1}" alt="" width="116" height="16" /><span style="line-height:1.5;">&nbsp;。</span> 
+</p>
+<p>
+	<strong><span style="color:#E53333;">4）最小负数：</span></strong><img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=4b7b70&-2^{(2^{m}-1)}*(1-2^{-n})" alt="" width="149" height="20" /> 
+</p>
+<p>
+	<span style="font-size:18px;">&nbsp;</span><strong><span style="color:#E53333;font-size:18px;"><strong><span style="color:#333333;font-size:18px;">3. 规格化浮点数表示范围（机器数为原码）</span></strong></span></strong>&nbsp;
+</p>
+<p>
+	这个不用分析了，原码和普通的二进制小数没有区别，因为数值部分一模一样，其实上面讨论的就可以看成是原码，不再重复。
+</p>
+<p>
+	<strong><span style="color:#E53333;font-size:18px;"><strong><span style="color:#333333;font-size:18px;">4. 规格化浮点数表示范围（机器数为补码）</span></strong></span></strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;">1）最大正数：<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=255dc1&2^{(2^m-1)}\times{(1-2^{-n})}" alt="" width="142" height="20" title="" align="" /></span></strong> 
+</p>
+<p>
+	<strong><span style="color:#E53333;">2）最小正数：<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=12e19e&2^{-2^m}\times{2^{-1}}" alt="" width="81" height="16" title="" align="" /></span></strong> 
+</p>
+<strong><span style="color:#E53333;">3）最大负数：<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=01af16&2^{-2^m}\times{(-2^{-1}-2^{-n})}" alt="" width="156" height="20" title="" align="" /></span></strong><strong><span style="color:#E53333;"><br />
+</span></strong><strong><span style="color:#E53333;">4）最小负数：<img src="http://texmath.koudaitiku.com/cgi-bin/mathtex.cgi?sign=d4bf46&2^{2^m-1}\times{(-1)}" alt="" width="96" height="20" /></span></strong><br />

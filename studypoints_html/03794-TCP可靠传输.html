@@ -1,0 +1,51 @@
+<p>
+	<strong><span style="color:#333333;font-size:18px;">1．TCP的数据编号与确认</span></strong> 
+</p>
+<p>
+	<strong>a. TCP协议是面向字节的。</strong>TCP将所要传送的报文看成是<strong><u>字节组成的数据流</u></strong>，并使每一个字节对应于一个序号。在连接建立时，双方要商定初始序号。
+</p>
+<p>
+	<strong>b. TCP的确认是对接收到的数据的最高序号表示确认。</strong>因此，确认号表示接收端期望下次收到的数据中的第一个数据字节的序号。
+</p>
+<p>
+	<strong><img src="file://C:\Users\ADMINI~1\AppData\Local\Temp\SGTpbq\4656\02FB0730.png" />c.&nbsp;在后退N帧协议中，</strong>如果帧不按序到达，直接丢弃后面的，没有使用选择确认。
+</p>
+<p>
+	<strong>d. 在选择重传协议中，</strong>先把后面有序的帧存在接收缓冲区中，等到前面失序的帧到达后，一起按序交付，这里就用到选择确认SACK。
+</p>
+<p>
+	<strong><span style="color:#333333;font-size:18px;">2．TCP的重传机制</span></strong> 
+</p>
+<p>
+	TCP每发送一个报文段，就对这个报文段设置一次计时器。<strong><span style="color:#E53333;"><u>只要计时器设置的重传时间到了规定时间还没有收到确认，那么就要重传该报文段</u></span></strong>。TCP采用了一种自适应的算法，如下：
+</p>
+<p style="text-indent:0px;">
+	<span style="line-height:1.5;"><strong>第一步：</strong>记录每个报文段发出的时间以及收到相应的确认报文段的时间。这两个时间之差就是报文段的往返时延。</span> 
+</p>
+<p style="text-indent:0px;">
+	<span style="line-height:1.5;"><strong>第二步：</strong>将各个报文段的往返时延样本加权平均，就得出报文段的平均往返时延（</span><span style="line-height:1.5;">RTT</span><span style="line-height:1.5;">）。</span> 
+</p>
+<p style="text-indent:0px;">
+	<span style="line-height:1.5;"><strong>第三步：</strong></span><span style="line-height:1.5;">每测量到一个新的往返时延样本，就按下式重新计算一次平均往返时延。</span> 
+</p>
+<p class="MsoNormal" style="text-indent:21.0pt;">
+	<span></span> 
+</p>
+<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm;">
+	<span>RTT</span>=<span>(1</span>-a<span>)<img src="texmath/ff0c81times" alt="" width="9" height="8" /></span><span>(</span>旧的<span>RTT)</span>+a<img src="texmath/ff0c81times" alt="" width="9" height="8" /><span>(</span>新的往返时延样本<span>)</span> 
+</p>
+<p class="MsoNormal" align="center" style="text-align:left;text-indent:0cm;">
+	<span> </span>
+</p>
+<p class="MsoNormal" align="center" style="text-align:left;text-indent:0cm;">
+	<span style="line-height:1.5;">在上式中，0≤a&lt;1。若a很接近于1，表示新算出的平均往返时延RTT和原来的值相比变化较大，即RTT的值 更新较快。若选择a接近于0，则表示加权计算的RTT受新的往返时延样本的影响不大，即RTT的值更新较慢，一般推荐a取0.125。</span> 
+</p>
+<p class="MsoNormal" align="center" style="text-align:left;text-indent:0cm;">
+	<span style="line-height:1.5;">计时器的超时重传时间（RTO）应略大于上面得出的RTT，即</span><span style="line-height:1.5;">RTO=<img src="texmath/338478beta" alt="" width="10" height="14" /><img src="texmath/ff0c81times" alt="" width="9" height="8" />RTT（其中<img src="texmath/338478beta" alt="" width="10" height="14" />&gt;1）</span> 
+</p>
+<p>
+	<br />
+</p>
+<p class="MsoNormal" style="text-indent:21.0pt;">
+	<br />
+</p>

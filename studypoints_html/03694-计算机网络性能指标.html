@@ -1,0 +1,51 @@
+<p style="text-align:left;">
+	<strong><span style="font-size:24px;">1. 时延</span></strong> 
+</p>
+<p>
+	时延是指<strong><u>数据从网络或链路的一端传送到另一端所需要的时间</u></strong>，有时也被称为延迟或迟延。网络时延由以下几部分组成。
+</p>
+<p>
+	<strong>① 发送时延（或者称为传输时延）：</strong>主机或路由器发送数据帧所需要的时间，即从发送数据帧的第一位算起到该帧的最后一位发送完毕所需要的时间。因此，发送时延也被称为传输时延。
+</p>
+<p>
+	<span style="color:#E53333;">发送时延=数据帧长度(bit)/发送速率(bit/s)</span> 
+</p>
+<p>
+	<strong>② 传播时延。</strong>是指电磁波在信道中传播一定的距离所需要的时间。传播时延的计算公式为
+</p>
+<p>
+	<span style="color:#E53333;">传播时延=信道长度（m）/电磁波在信道上的传播速度（m/s）</span> 
+</p>
+<p>
+	<strong>③ 处理时延。</strong>是指主机或路由器在接收到分组时进行处理所需要的时间。
+</p>
+<p>
+	<strong>④ 排队时延。</strong>分组在进入网络传输时，要经过许多路由器，但分组在进入路由器后要先在输入队列中排队等待处理，在路由器确定了转发接口后，还需要在输出队列中排队等待转发，这就产生了排队时延。
+</p>
+<p>
+	<strong>总时延=发送时延+传播时延+处理时延+排队时延</strong> 
+</p>
+<p>
+	<strong><span style="font-size:24px;">2. 时延带宽积</span></strong> 
+</p>
+<p>
+	时延带宽积又称为<strong><u>以比特为单位的链路长度</u></strong>。时延带宽积=传播时延<img src="texmath/ff0c81times" alt="" width="9" height="8" />带宽
+</p>
+<p>
+	<strong><span style="font-size:24px;">3. 往返时间</span></strong> 
+</p>
+<p>
+	从发送方发送数据开始，到发送方收到来自接收方的确认消息（接收方收到数据后便立即发送确认）总共经历的时间。
+</p>
+<p>
+	<strong><span style="font-size:24px;">4. 利用率</span></strong> 
+</p>
+<p>
+	包括<strong><u>信</u></strong><strong><u>道利用率和网络利用率</u></strong>两种。
+</p>
+<p>
+	<span style="line-height:1.5;"><span style="color:#E53333;"><strong>信道利用率</strong></span>指<strong><u>某信道有百分之几的时间是被利用的（有数据通过）</u>，</strong>完全空闲的信道的利用率为零。</span> 
+</p>
+<p>
+	<span style="line-height:1.5;"><span style="color:#E53333;"><strong>网络利用率</strong></span>是<strong><u>全网络的信道利用率的加权平均值</u></strong>。但是需要注意一点，不是信道利用率与网络利用率越高越好，因为利用率越高，会导致数据在路由器中转发时延过长。</span> 
+</p>

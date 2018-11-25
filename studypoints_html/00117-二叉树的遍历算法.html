@@ -1,0 +1,53 @@
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">二叉树的遍历方式有<span style="color:#000000;">先序遍历、中序遍历、后序遍历和层次遍历</span>。</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;color:#E53333;"><u>识记：这里的“先”、“中”、“后”指的都是根结点。</u></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>1. 先序遍历</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<img src="png-jpeg-pics/E4B93F3652A5B6AEA48E90F5E7B51671.png" width="356" height="137" alt="" title="" align="" /> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>2. 中序遍历</strong></span><span style="line-height:1.5;"></span><span style="line-height:1.5;"></span> 
+</p>
+<p style="font-size:16px;">
+	<img src="png-jpeg-pics/AA7041D42D263BEB9BB27E2D52669F00.png" width="356" height="135" alt="" title="" align="" /> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>3. 后序遍历</strong><br />
+</span> 
+</p>
+<p style="font-size:16px;">
+	<img src="png-jpeg-pics/DA6263531CC4AB6CAFCB3A75F5C3FC2A.png" width="356" height="137" alt="" title="" align="" /> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>4. 层次遍历</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">设二叉树的根结点所在层数为1，层序遍历就是从所在二叉树的根结点出发，首先访问第一层的树根结点，然后从左到右访问第2层上的结点，接着是第三层的结点，以此类推，<span style="color:#E53333;"><u>自上而下，自左至右逐层访问树的结点的过程就是层序遍历</u></span>。</span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;">要进行层次遍历需要建立<span style="color:#E53333;"><u>循环队列</u></span>。先将二叉树头结点入队列，然后出队列，访问该结点，如果它有左子树，便将左子树根结点入队，如果它有右子树，便将右子树根结点入队。然后出队列，对出队结点访问，如此反复，直到队列为空为止。</span> 
+</p>
+<p style="font-size:16px;">
+	<img src="png-jpeg-pics/324D9D425551BAABF5F198A0DB78E7A4.png" width="356" height="318" alt="" title="" align="" /> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>扩展：</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>1. 求二叉树的深度，二叉树以二叉链表为存储方式</strong></span> 
+</p>
+<p style="font-size:16px;">
+	<img src="png-jpeg-pics/02C244175A0D32E13628EE7D835406E2.png" width="356" height="130" alt="" title="" align="" /> 
+</p>
+<p style="font-size:16px;">
+	<span style="line-height:1.5;"><strong>2. 查找data域值为key的结点</strong><br />
+</span> 
+</p>
+<p style="font-size:16px;">
+	<img src="png-jpeg-pics/72561B081410F70646D1B7424340C60D.png" width="356" height="205" alt="" title="" align="" /> 
+</p>
